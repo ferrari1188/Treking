@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem 'devise'
 gem 'geocoder'
-gem 'nokogiri'
+# gem 'nokogiri'
+gem 'nokogiri', '1.12.3', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

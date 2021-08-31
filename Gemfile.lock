@@ -241,7 +241,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.7)
   listen (~> 3.2)
-  nokogiri
+  nokogiri (= 1.12.3)
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails
@@ -262,4 +262,4 @@ RUBY VERSION
    ruby 2.7.3p183
 
 BUNDLED WITH
-   2.1.4
+   2.2.25
