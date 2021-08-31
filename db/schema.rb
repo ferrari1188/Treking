@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_113339) do
+ActiveRecord::Schema.define(version: 2021_08_31_114612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "journeys", force: :cascade do |t|
+    t.bigint "route_id"
+    t.bigint "user_id"
+    t.datetime "journey_start", null: false
+    t.datetime "journey_end", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["route_id"], name: "index_journeys_on_route_id"
+    t.index ["user_id"], name: "index_journeys_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "category"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "notification_start", null: false
+    t.datetime "notification_end", null: false
+    t.bigint "journey_id"
+    t.text "description"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["journey_id"], name: "index_notifications_on_journey_id"
+  end
 
   create_table "routes", force: :cascade do |t|
     t.bigint "user_id"
@@ -39,5 +64,8 @@ ActiveRecord::Schema.define(version: 2021_08_31_113339) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "journeys", "routes"
+  add_foreign_key "journeys", "users"
+  add_foreign_key "notifications", "journeys"
   add_foreign_key "routes", "users"
 end
