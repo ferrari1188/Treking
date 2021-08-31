@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :routes
   has_many :journeys
+  has_many :notifications, through: :journeys
   validates :first_name, :last_name, presence: true
   validates :email, :password, presence: true, uniqueness: true
 end
