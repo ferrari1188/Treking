@@ -27,19 +27,19 @@ class RoutesController < ApplicationController
   def show
   end
 
-  def new
-    @route = Route.new
-  end
+  # def new
+  #   @route = Route.new
+  # end
 
-  def create
-    @route = Route.new(route_params)
-    @route.user = current_user
-    if @route.save
-      redirect_to route_path(@route), notice: 'route was successfully created.'
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @route = Route.new(route_params)
+  #   @route.user = current_user
+  #   if @route.save
+  #     redirect_to route_path(@route), notice: 'route was successfully created.'
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def edit
   end
