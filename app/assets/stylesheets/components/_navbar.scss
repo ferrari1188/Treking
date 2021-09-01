@@ -1,21 +1,27 @@
 .navbar-lewagon {
   // background-color: #275624;
-  background: linear-gradient(
-    170deg,
-    #275624,
-    #639438
-    );
+  // background: linear-gradient(
+  //   170deg,
+  //   #275624,
+  //   #639438
+  //   );
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
   padding: 18px;
+  position: absolute;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   justify-content: space-between;
   width: 100%;
+
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+
 }
 
 .nav-link {
