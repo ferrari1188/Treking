@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Notification.destroy_all
+Journey.destroy_all
+Route.destroy_all
+User.destroy_all
+Route.destroy_all
+Notification.destroy_all
+Journey.destroy_all
+
+emails = ['phenela.luengo@gmail.com', 'hester25194@gmail.com', 'chi.ferr.1188@gmail.com', 'benwest0291@outlook.com']
+emails.each do |email|
+  user = User.new(
+    email: email,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    password: "password"
+  )
+  user.save!
+end
+
+puts "new users created"
