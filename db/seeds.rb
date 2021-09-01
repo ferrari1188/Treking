@@ -9,9 +9,6 @@ Notification.destroy_all
 Journey.destroy_all
 Route.destroy_all
 User.destroy_all
-Route.destroy_all
-Notification.destroy_all
-Journey.destroy_all
 
 emails = ['phenela.luengo@gmail.com', 'hester25194@gmail.com', 'chi.ferr.1188@gmail.com', 'benwest0291@outlook.com']
 emails.each do |email|
