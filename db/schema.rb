@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_110504) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "notification_end"
+    t.string "location"
     t.index ["journey_id"], name: "index_notifications_on_journey_id"
   end
 
