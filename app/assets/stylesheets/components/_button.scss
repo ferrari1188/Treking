@@ -1,0 +1,35 @@
+.btn-ghost {
+  background: linear-gradient(45deg,
+      #639438,
+      #275624);
+  color: #f9f9f9;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: lighter;
+
+}
+
+.btn-ghost:hover {
+  background: linear-gradient(45deg,
+      #82ad5c,
+      #639438);
+  opacity: 1;
+}
+
+.btn-flat {
+  color: #0b0b0b;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: linear-gradient(45deg,
+      #d8a47f,
+      #d1b39e);
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+
+  color: white;
+  background: linear-gradient(45deg,
+      #603e35,
+      #d9905b);
+}
