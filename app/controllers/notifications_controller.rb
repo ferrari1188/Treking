@@ -1,20 +1,20 @@
 class NotificationsController < ApplicationController
-   def index
+  def index
     @notifications = Notification.all
 
     if params[:query].present?
       @notifications = Notification.near(params[:query])
     end
+  end
 
-     # @markers = @routes.geocoded.map do |route|
-      # {
-      #   lat: route.latitude,
-      #   lng: route.longitude,
-      #   info_window: render_to_string(partial: "info_window", locals: { route: route }),
-      #   image_url: helpers.asset_url('marker2.png')
-      #   }
-      #   end
-   # end
+    @markers = @routes.geocoded.map do |route|
+      {
+        lat: route.latitude,
+        lng: route.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { route: route }),
+        image_url: helpers.asset_url('marker2.png')
+        }
+        end
 
   def near_me
   end
