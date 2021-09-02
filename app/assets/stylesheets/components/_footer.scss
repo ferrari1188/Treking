@@ -1,8 +1,7 @@
 .footer {
-  background-color: #603e35;
-  // background: linear-gradient(70deg,
-  //   #603e35,
-  //   #275624);
+  background: linear-gradient(45deg,
+    #4d544c,
+    #639438);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,7 +10,6 @@
   color: #fff;
   width: 100%;
   margin-top: 40px;
-  border-radius: 30px 30px 0 0;
 }
 
 .footer-links {
