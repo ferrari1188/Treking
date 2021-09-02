@@ -8,19 +8,19 @@ class RoutesController < ApplicationController
     @routes = Route.all
   end
 
-  #   if params[:query].present?
-  #     @routes = Route.near(params[:query])
-  #   end
-  # end
+    if params[:query].present?
+      @routes = Route.near(params[:query])
+    end
 
-  # @markers = @routes.geocoded.map do |route|
-  #   {
-  #     lat: route.latitude,
-  #     lng: route.longitude,
-  #     info_window: render_to_string(partial: "info_window", locals: { route: route }),
-  #     image_url: helpers.asset_url('marker2.png')
-  #   }
-  # end
+    @markers = @routes.geocoded.map do |route|
+      {
+        lat: route.latitude,
+        lng: route.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { route: route }),
+        image_url: helpers.asset_url('marker2.png')
+      }
+    end
+  end
 
   # def near_me
   # end
@@ -61,7 +61,7 @@ class RoutesController < ApplicationController
   # private
 
   def set_route
-    @route = Route.find(params[:id])
+    @route = route.find(params[:id])
   end
 
   # def route_params
