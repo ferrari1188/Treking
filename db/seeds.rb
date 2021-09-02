@@ -79,12 +79,6 @@ puts "Waypoints created"
 
 # Route.find(params[:id])
 # Waypoint.where(route_id: params[:id]).sort
-<<<<<<< HEAD
-# ?order by
-# populate array with coordinates
-# write the mapbox url
-=======
 # # ?order by
 # # populate array with coordinates
 # # write the mapbox url
->>>>>>> 3635abbf3dfaaecfa7813f3be418efab6ef9e12b
