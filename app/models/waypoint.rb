@@ -1,3 +1,3 @@
 class Waypoint < ApplicationRecord
-  belongs_to :routes
+  belongs_to :route
 end
