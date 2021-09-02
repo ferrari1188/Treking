@@ -12,20 +12,21 @@ class RoutesController < ApplicationController
   #   end
   # end
 
-  # @markers = @routes.geocoded.map do |route|
-  #   {
-  #     lat: route.latitude,
-  #     lng: route.longitude,
-  #     info_window: render_to_string(partial: "info_window", locals: { route: route }),
-  #     image_url: helpers.asset_url('marker2.png')
-  #   }
+  @markers = @routes.geocoded.map do |route|
+    {
+      lat: route.latitude,
+      lng: route.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { route: route }),
+      image_url: helpers.asset_url('marker2.png')
+    }
   end
 
   # def near_me
   # end
 
-  # def show
-  # end
+  def show
+    @waypoints = @route.waypoints
+  end
 
   # def new
   #   @route = Route.new
@@ -53,11 +54,11 @@ class RoutesController < ApplicationController
   #   end
   # end
 
-  # private
+  private
 
-  # def set_route
-  #   @route = route.find(params[:id])
-  # end
+  def set_route
+    @route = Route.find(params[:id])
+  end
 
   # def route_params
   #   params.require(:route).permit(start_location, end_location)
