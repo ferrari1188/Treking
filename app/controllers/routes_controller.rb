@@ -58,7 +58,7 @@ class RoutesController < ApplicationController
   #   end
   # end
 
-  private
+  # private
 
   def set_route
     @route = Route.find(params[:id])
