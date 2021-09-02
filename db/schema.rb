@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_01_110504) do
+ActiveRecord::Schema.define(version: 2021_09_01_183659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,8 @@ ActiveRecord::Schema.define(version: 2021_09_01_110504) do
     t.bigint "user_id"
     t.text "description"
     t.string "name"
-    t.float "longitude_start"
-    t.float "latitude_start"
     t.string "start_location"
     t.string "end_location"
-    t.float "latitude_end"
-    t.float "longitude_end"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_routes_on_user_id"
@@ -69,8 +65,19 @@ ActiveRecord::Schema.define(version: 2021_09_01_110504) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "waypoints", force: :cascade do |t|
+    t.float "longitude"
+    t.float "latitude"
+    t.bigint "route_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "sequence"
+    t.index ["route_id"], name: "index_waypoints_on_route_id"
+  end
+
   add_foreign_key "journeys", "routes"
   add_foreign_key "journeys", "users"
   add_foreign_key "notifications", "journeys"
   add_foreign_key "routes", "users"
+  add_foreign_key "waypoints", "routes"
 end
