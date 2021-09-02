@@ -4,6 +4,31 @@ body{
   margin: 0;
 }
 
+h1{
+  padding-bottom: 25px;
+}
+
 .components{
   margin-top: 150px;
+}
+
+.main-paragraph{
+  text-align: center;
+  font-size: 25px;
+  margin: 40px 60px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.home-cards{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.home-container{
+  margin: 50px 50px;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
 }
