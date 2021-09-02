@@ -3,16 +3,18 @@
 
 
 <div id="map"></div>
+
+<%= @coordinates %>
 <script>
+	// const coords = "<%= @coordinates.to_json %>";
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
 	const map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/streets-v11',
-		center: [40.73219303109434, -73.99637976652599],
+		center: [-0.692179, 51.666231],
 		zoom: 15,
     interactive: false
 	});
-
 	map.on('load', () => {
 		map.addSource('route', {
 			'type': 'geojson',
@@ -22,16 +24,67 @@
 				'geometry': {
 					'type': 'LineString',
 					'coordinates': [
-            <% @waypoints.each do |waypoint| %>
-              [waypoint.latitude, waypoint.longitude]<%= @waypoints.last ? "" : "," %>
-            <% end %>
-            // [-0.692179, 51.666231],
-            // [-0.693131, 51.667777],
-            // [-0.691499, 51.667954],
-            // [-0.690967, 51.668062],
-            // [-0.690822, 51.667339],
-            // [-0.69093, 51.667211],
-            // [-0.692179, 51.666231]
+						// console.log(coords[0])
+						// <%= @coordinates.inspect.html_safe %>
+            [-0.692179, 51.666231],
+            [-0.693131, 51.667777],
+            [-0.691499, 51.667954],
+            [-0.690967, 51.668062],
+            [-0.690822, 51.667339],
+            [-0.69093, 51.667211],
+            [-0.692179, 51.666231]
+					]
+				}
+			}
+		});
+		map.addLayer({
+			'id': 'route',
+			'type': 'line',
+			'source': 'route',
+			'layout': {
+				'line-join': 'round',
+				'line-cap': 'round'
+			},
+			'paint': {
+				'line-color': '#639438',
+				'line-width': 8
+			}
+		});
+    // map.scrollZoom.disable();
+	});
+</script>
+
+<div id="map3d"></div>
+
+<%= @coordinates %>
+<script>
+	// const coords = "<%= @coordinates.to_json %>";
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
+	const map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11',
+		center: [-0.692179, 51.666231],
+		zoom: 15,
+    interactive: false
+	});
+	map.on('load', () => {
+		map.addSource('route', {
+			'type': 'geojson',
+			'data': {
+				'type': 'Feature',
+				'properties': {},
+				'geometry': {
+					'type': 'LineString',
+					'coordinates': [
+						// console.log(coords[0])
+						// <%= @coordinates.inspect.html_safe %>
+            [-0.692179, 51.666231],
+            [-0.693131, 51.667777],
+            [-0.691499, 51.667954],
+            [-0.690967, 51.668062],
+            [-0.690822, 51.667339],
+            [-0.69093, 51.667211],
+            [-0.692179, 51.666231]
 					]
 				}
 			}

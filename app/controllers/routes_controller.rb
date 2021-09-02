@@ -6,6 +6,7 @@ class RoutesController < ApplicationController
 
   def index
     @routes = Route.all
+  end
 
     if params[:query].present?
       @routes = Route.near(params[:query])
@@ -24,8 +25,12 @@ class RoutesController < ApplicationController
   # def near_me
   # end
 
-  # def show
-  # end
+  def show
+    @waypoints = @route.waypoints
+    @coordinates = @waypoints.map do |waypoint|
+      [waypoint.latitude, waypoint.longitude]
+    end
+  end
 
   # def new
   #   @route = Route.new
@@ -55,9 +60,9 @@ class RoutesController < ApplicationController
 
   # private
 
-  # def set_route
-  #   @route = route.find(params[:id])
-  # end
+  def set_route
+    @route = route.find(params[:id])
+  end
 
   # def route_params
   #   params.require(:route).permit(start_location, end_location)

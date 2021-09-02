@@ -1,4 +1,3 @@
-
 .mapboxgl-popup {
   width: 200px;
   height: 200px;
@@ -7,4 +6,15 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+}
+
+#map {
+  height: 600px;
+  width: 600px;
+  width: 100%;
+}
+
+#map3d {
+  height: 250px;
+  width: 250px;
 }
