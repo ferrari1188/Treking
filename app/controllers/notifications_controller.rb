@@ -7,15 +7,6 @@ class NotificationsController < ApplicationController
     end
   end
 
-    @markers = @routes.geocoded.map do |route|
-      {
-        lat: route.latitude,
-        lng: route.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { route: route }),
-        image_url: helpers.asset_url('marker2.png')
-        }
-        end
-
   def near_me
   end
 
