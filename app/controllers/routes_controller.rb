@@ -6,6 +6,7 @@ class RoutesController < ApplicationController
 
   def index
     @routes = Route.all
+  end
 
   #   if params[:query].present?
   #     @routes = Route.near(params[:query])
@@ -19,13 +20,16 @@ class RoutesController < ApplicationController
   #     info_window: render_to_string(partial: "info_window", locals: { route: route }),
   #     image_url: helpers.asset_url('marker2.png')
   #   }
-  end
+  # end
 
   # def near_me
   # end
 
   def show
     @waypoints = @route.waypoints
+    @coordinates = @waypoints.map do |waypoint|
+      [waypoint.latitude, waypoint.longitude]
+    end
   end
 
   # def new
