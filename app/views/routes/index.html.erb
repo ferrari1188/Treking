@@ -1,11 +1,18 @@
 <%# <div class="index-container"> %>
 <%# <h1>Feeds Page</h1> %>
-<form>
+<%# <form>
 	<label for="search">Search</label>
 	<input id="search" type="search" pattern=".*\S.*" required>
 	<span class="caret"></span>
+</form> %>
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
 </form>
-
 
 <div class="map">
 <div id="map"
