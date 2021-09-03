@@ -11,21 +11,21 @@ Waypoint.destroy_all
 Route.destroy_all
 User.destroy_all
 
-routes_coordinates = [
-  # route1
-  [{
-    longitude: -0.16151763376637973,
-    latitude: 51.53873324882562
-    # coordinates route1 -waypoint1
-   },{
-    longitude:
-    # coordinates route1 -waypoint2
-   }],
-  #  route2
-  [{
-#coordinates route2 waypoint 1
-   }]
-]
+# routes_coordinates = [
+#   # route1
+#   [{
+#     longitude: -0.16151763376637973,
+#     latitude: 51.53873324882562
+#     # coordinates route1 -waypoint1
+#    },{
+#     longitude:
+#     # coordinates route1 -waypoint2
+#    }],
+#   #  route2
+#   [{
+# #coordinates route2 waypoint 1
+#    }]
+# ]
 
 emails = ['phenela.luengo@gmail.com', 'hester25194@gmail.com', 'chi.ferr.1188@gmail.com', 'benwest0291@outlook.com']
 emails.each do |email|
