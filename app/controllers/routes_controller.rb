@@ -6,11 +6,9 @@ class RoutesController < ApplicationController
 
   def index
     @routes = Route.all
-
     if params[:query].present?
       @routes = Route.near(params[:query])
     end
-
     @markers = @routes.geocoded.map do |route|
       {
         lat: route.latitude,
@@ -27,7 +25,7 @@ class RoutesController < ApplicationController
   def show
     @waypoints = @route.waypoints
     @coordinates = @waypoints.map do |waypoint|
-      [waypoint.latitude, waypoint.longitude]
+      [waypoint.longitude, waypoint.latitude]
     end
   end
 
@@ -60,7 +58,7 @@ class RoutesController < ApplicationController
   # private
 
   def set_route
-    @route = route.find(params[:id])
+    @route = Route.find(params[:id])
   end
 
   # def route_params
