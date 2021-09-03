@@ -1,89 +1,99 @@
-<div class="container-banner" style="background-image: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), url(https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1440&q=80);">
+<div class="container-banner" style="background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fd2exd72xrrp1s7.cloudfront.net%2Fwww%2F000%2F1k3%2Fda%2Fda83ed3bv0veyqg1oqgz71bh2ue3m2i9-uhi4721559%2F0%3Fwidth%3D768%26height%3D576%26crop%3Dtrue);">
   <div class="banner">
     <h1><%= @route.name %></h1>
   </div>
 </div>
 
-<div id="map" data-coords="<%= @coordinates %>"></div>
-<div id="map3d" data-coords="<%= @coordinates %>"></div>
-
-<%= @coordinates %>
-<script>
-  const coords = JSON.parse(document.getElementById("map").dataset.coords)
-	// console.log(coords);
-	mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
-	const map = new mapboxgl.Map({
-		container: 'map',
-		style: 'mapbox://styles/mapbox/streets-v11',
-		center: coords[0],
-		zoom: 15,
-    interactive: false
-	});
-	map.on('load', () => {
-		map.addSource('route', {
-			'type': 'geojson',
-			'data': {
-				'type': 'Feature',
-				'properties': {},
-				'geometry': {
-					'type': 'LineString',
-					'coordinates': coords
-				}
-			}
-		});
-		map.addLayer({
-			'id': 'route',
-			'type': 'line',
-			'source': 'route',
-			'layout': {
-				'line-join': 'round',
-				'line-cap': 'round'
-			},
-			'paint': {
-				'line-color': '#639438',
-				'line-width': 8
-			}
-		});
-    // map.scrollZoom.disable();
-	});
-</script>
-
-<script>
-  const coords3d = JSON.parse(document.getElementById("map3d").dataset.coords)
-	// console.log(coords);
-	mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
-	const map3d = new mapboxgl.Map({
-		container: 'map3d',
-		style: 'mapbox://styles/mapbox/streets-v11',
-		center: coords3d[0],
-		zoom: 15,
-    interactive: true
-	});
-	map3d.on('load', () => {
-		map3d.addSource('route', {
-			'type': 'geojson',
-			'data': {
-				'type': 'Feature',
-				'properties': {},
-				'geometry': {
-					'type': 'LineString',
-					'coordinates': coords3d
-				}
-			}
-		});
-		map3d.addLayer({
-			'id': 'route',
-			'type': 'line',
-			'source': 'route',
-			'layout': {
-				'line-join': 'round',
-				'line-cap': 'round'
-			},
-			'paint': {
-				'line-color': '#639438',
-				'line-width': 8
-			}
-		});
-    // map.scrollZoom.disable();
-	});
-</script>
+<div class="home-container">
+	<div class="fixed-map-show-container">
+		<div class="row">
+    	<div class="col">
+    	  <p>Details</p>
+    	</div>
+    	<div class="col">
+    	  <div id="map" data-coords="<%= @coordinates %>"></div>
+				<script>
+					const coords = JSON.parse(document.getElementById("map").dataset.coords)
+					// console.log(coords);
+					mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
+					const map = new mapboxgl.Map({
+						container: 'map',
+						style: 'mapbox://styles/mapbox/streets-v11',
+						center: coords[0],
+						zoom: 14,
+						interactive: false
+					});
+					map.on('load', () => {
+						map.addSource('route', {
+							'type': 'geojson',
+							'data': {
+								'type': 'Feature',
+								'properties': {},
+								'geometry': {
+									'type': 'LineString',
+									'coordinates': coords
+								}
+							}
+						});
+						map.addLayer({
+							'id': 'route',
+							'type': 'line',
+							'source': 'route',
+							'layout': {
+								'line-join': 'round',
+								'line-cap': 'round'
+							},
+							'paint': {
+								'line-color': '#639438',
+								'line-width': 8
+							}
+						});
+						// map.scrollZoom.disable();
+					});
+				</script>
+    	</div>
+  	</div>	
+	</div>
+	<div class="interactive-map-show-page">
+		<div id="map3d" data-coords="<%= @coordinates %>"></div>
+		<script>
+			const coords3d = JSON.parse(document.getElementById("map3d").dataset.coords)
+			// console.log(coords);
+			mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
+			const map3d = new mapboxgl.Map({
+				container: 'map3d',
+				style: 'mapbox://styles/mapbox/streets-v11',
+				center: coords3d[0],
+				zoom: 15,
+				interactive: true
+			});
+			map3d.on('load', () => {
+				map3d.addSource('route', {
+					'type': 'geojson',
+					'data': {
+						'type': 'Feature',
+						'properties': {},
+						'geometry': {
+							'type': 'LineString',
+							'coordinates': coords3d
+						}
+					}
+				});
+				map3d.addLayer({
+					'id': 'route',
+					'type': 'line',
+					'source': 'route',
+					'layout': {
+						'line-join': 'round',
+						'line-cap': 'round'
+					},
+					'paint': {
+						'line-color': '#639438',
+						'line-width': 8
+					}
+				});
+				// map.scrollZoom.disable();
+			});
+		</script>
+	</div>
+</div>
