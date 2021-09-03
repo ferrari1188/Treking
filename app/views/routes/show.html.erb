@@ -2,16 +2,18 @@
 
 
 
-<div id="map"></div>
+<div id="map" data-coords="<%= @coordinates %>"></div>
+<div id="map3d" data-coords="<%= @coordinates %>"></div>
 
 <%= @coordinates %>
 <script>
-	// const coords = "<%= @coordinates.to_json %>";
+  const coords = JSON.parse(document.getElementById("map").dataset.coords)
+	// console.log(coords);
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
 	const map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/streets-v11',
-		center: [-0.692179, 51.666231],
+		center: coords[0],
 		zoom: 15,
     interactive: false
 	});
@@ -23,17 +25,7 @@
 				'properties': {},
 				'geometry': {
 					'type': 'LineString',
-					'coordinates': [
-						// console.log(coords[0])
-						// <%= @coordinates.inspect.html_safe %>
-            [-0.692179, 51.666231],
-            [-0.693131, 51.667777],
-            [-0.691499, 51.667954],
-            [-0.690967, 51.668062],
-            [-0.690822, 51.667339],
-            [-0.69093, 51.667211],
-            [-0.692179, 51.666231]
-					]
+					'coordinates': coords
 				}
 			}
 		});
@@ -54,42 +46,30 @@
 	});
 </script>
 
-<div id="map3d"></div>
-
-<%= @coordinates %>
 <script>
-	// const coords = "<%= @coordinates.to_json %>";
+  const coords3d = JSON.parse(document.getElementById("map3d").dataset.coords)
+	// console.log(coords);
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
-	const map = new mapboxgl.Map({
-		container: 'map',
+	const map3d = new mapboxgl.Map({
+		container: 'map3d',
 		style: 'mapbox://styles/mapbox/streets-v11',
-		center: [-0.692179, 51.666231],
+		center: coords3d[0],
 		zoom: 15,
-    interactive: false
+    interactive: true
 	});
-	map.on('load', () => {
-		map.addSource('route', {
+	map3d.on('load', () => {
+		map3d.addSource('route', {
 			'type': 'geojson',
 			'data': {
 				'type': 'Feature',
 				'properties': {},
 				'geometry': {
 					'type': 'LineString',
-					'coordinates': [
-						// console.log(coords[0])
-						// <%= @coordinates.inspect.html_safe %>
-            [-0.692179, 51.666231],
-            [-0.693131, 51.667777],
-            [-0.691499, 51.667954],
-            [-0.690967, 51.668062],
-            [-0.690822, 51.667339],
-            [-0.69093, 51.667211],
-            [-0.692179, 51.666231]
-					]
+					'coordinates': coords3d
 				}
 			}
 		});
-		map.addLayer({
+		map3d.addLayer({
 			'id': 'route',
 			'type': 'line',
 			'source': 'route',
@@ -105,3 +85,62 @@
     // map.scrollZoom.disable();
 	});
 </script>
+
+<%# <script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-122.486052, 37.830348],
+zoom: 15
+});
+ 
+map.on('load', () => {
+map.addSource('route', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'properties': {},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+[-122.483696, 37.833818],
+[-122.483482, 37.833174],
+[-122.483396, 37.8327],
+[-122.483568, 37.832056],
+[-122.48404, 37.831141],
+[-122.48404, 37.830497],
+[-122.483482, 37.82992],
+[-122.483568, 37.829548],
+[-122.48507, 37.829446],
+[-122.4861, 37.828802],
+[-122.486958, 37.82931],
+[-122.487001, 37.830802],
+[-122.487516, 37.831683],
+[-122.488031, 37.832158],
+[-122.488889, 37.832971],
+[-122.489876, 37.832632],
+[-122.490434, 37.832937],
+[-122.49125, 37.832429],
+[-122.491636, 37.832564],
+[-122.492237, 37.833378],
+[-122.493782, 37.833683]
+]
+}
+}
+});
+map.addLayer({
+'id': 'route',
+'type': 'line',
+'source': 'route',
+'layout': {
+'line-join': 'round',
+'line-cap': 'round'
+},
+'paint': {
+'line-color': '#888',
+'line-width': 8
+}
+});
+});
+</script> %>
