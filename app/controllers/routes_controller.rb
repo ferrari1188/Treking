@@ -6,7 +6,7 @@ class RoutesController < ApplicationController
 
   def index
     @routes = Route.all
-  end
+
 
     if params[:query].present?
       @routes = Route.near(params[:query])
