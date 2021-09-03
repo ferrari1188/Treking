@@ -15,6 +15,7 @@ class RoutesController < ApplicationController
         lng: route.longitude
         # info_window: render_to_string(partial: "info_window", locals: { route: route }),
         # image_url: helpers.asset_url('marker2.png')
+
       }
     end
   end
@@ -27,6 +28,7 @@ class RoutesController < ApplicationController
     @coordinates = @waypoints.map do |waypoint|
       [waypoint.longitude, waypoint.latitude]
     end
+    @name = @route.name
   end
 
   # def new
