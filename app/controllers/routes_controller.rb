@@ -27,6 +27,7 @@ class RoutesController < ApplicationController
     @coordinates = @waypoints.map do |waypoint|
       [waypoint.longitude, waypoint.latitude]
     end
+    @name = @route.name
   end
 
   # def new
