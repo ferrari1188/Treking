@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 300px 0;
+  border-radius: 0 0 20px 20px;
 }
 
 .banner{
@@ -10,15 +11,78 @@
   align-items: center;
 }
 
+
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-  font-size: 50px;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+  font-size: 100px;
   font-weight: bold;
   padding-left: 30px;
   text-align: center;
   font-family: 'Raleway',sans-serif;
+}
+
+.typewriter{
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 50%
+  }
+}
+
+@-webkit-keyframes bounce {
+    0% {
+      transform: scale(1, 1) translate(0px, 0px);
+    }
+
+    30% {
+      transform: scale(1, 0.8) translate(0px, 10px);
+    }
+
+    75% {
+      transform: scale(1, 1.1) translate(0px, -25px);
+    }
+
+    100% {
+      transform: scale(1, 1) translate(0px, 0px);
+    }
+  }
+
+  .bounce {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 25px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    padding-top: 10px;
+    -webkit-animation: bounce 0.75s infinite;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: linear-gradient(45deg,
+      #d8a47f,
+      #d1b39e);
+}
+
+.bounce:hover{
+  color: #fff !important;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(45deg,
+    #603e35,
+    #d9905b);
 }
 
 .container-banner p {
@@ -26,13 +90,8 @@
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   padding-top: 10px;
-  padding-left: 85px;
-  padding-right: 85px;
+  padding-left: 140px;
+  padding-right: 140px;
   text-align: center;
   margin: 30px;
-}
-
-.container-banner .btn-flat{
-  margin-top: 50px;
-  width: 150px;
 }

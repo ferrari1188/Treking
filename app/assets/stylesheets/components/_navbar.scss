@@ -2,8 +2,12 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
   padding: 18px;
-  position: absolute;
+  position: fixed;
   width: 100%;
+}
+
+.navbar-lewagon{
+
 }
 
 .navbar-lewagon .navbar-collapse {

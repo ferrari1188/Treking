@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+* {
+  box-sizing: border-box;
+}
+
 body{
   background-color: #fefae0;
   margin: 0;
@@ -15,7 +19,7 @@ h1{
 .main-paragraph{
   text-align: center;
   font-size: 25px;
-  margin: 40px 60px;
+  margin: 20px 60px;
   background-color: #fff;
   padding: 40px;
   border-radius: 5px;
@@ -27,8 +31,34 @@ h1{
 }
 
 .home-container{
-  margin: 50px 50px;
+  margin: 50px;
   background-color:#fff;
-  padding: 50px;
+  padding: 5px 50px;
   border-radius: 10px;
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {}
+
+/* Portrait */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {}
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {}
+
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
 }
