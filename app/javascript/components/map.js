@@ -65,7 +65,6 @@
           'hillshade-illumination-anchor': 'map'
         }
       });
-
       map3d.addLayer({
         id: "sky",
         type: "sky",
@@ -75,6 +74,9 @@
           "sky-atmosphere-sun-intensity": 15
         }
       });
+      const marker = new mapboxgl.Marker()
+        .setLngLat(coords3d[0])
+        .addTo(map3d);
     });
   }
  }
