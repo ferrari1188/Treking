@@ -41,12 +41,13 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-
+x
 .bottom-cards{
    display: flex;
    flex-wrap: wrap;
    justify-content: space-evenly;
-   margin: 20px;
+   margin: 50px;
+   background-color: #fff;
 }
 
 .show-description-card {
@@ -57,6 +58,7 @@
   border-radius: 20px;
   width: 350px;
   height: 350px;
+  margin-bottom: 20px;
 }
 
 .show-description-card {
