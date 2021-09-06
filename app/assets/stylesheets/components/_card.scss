@@ -2,8 +2,8 @@
   margin-top: 50px;
   background-size: cover;
   background-position: center;
-  height: 200px;
-  width: 300px;
+  height: 220px;
+  width: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,6 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  margin: 20px;
 }
 .card-location a {
   color: inherit;
@@ -41,7 +40,6 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-x
 .bottom-cards{
    display: flex;
    flex-wrap: wrap;
@@ -50,7 +48,7 @@ x
    background-color: #fff;
 }
 
-.show-description-card {
+.alex-card {
   background: linear-gradient(45deg,
    #4d544c,
    #639438);
@@ -61,16 +59,16 @@ x
   margin-bottom: 20px;
 }
 
-.show-description-card {
+.alex-card:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
 }
 
-.show-description-card h2{
+.alex-card h2{
 text-align: center;
 color: #fefae0;
 }
 
-.show-description-card p {
+.alex-card p {
   margin-top: 20px;
   text-align: center;
   color: #fefae0;
@@ -95,4 +93,39 @@ margin-bottom: 50px;
 .btn-booking:hover{
   text-decoration: none;
   color: #603e35;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white !important;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+   text-decoration: none;
+}
+
+.card-category a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.card-category:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
 }
