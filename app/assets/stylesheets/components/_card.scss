@@ -1,4 +1,4 @@
-.card-location {
+.card-location{
   margin-top: 50px;
   background-size: cover;
   background-position: center;
@@ -39,4 +39,58 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.bottom-cards{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   margin: 20px;
+}
+
+.alex-card {
+  background: linear-gradient(45deg,
+   #4d544c,
+   #639438);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  width: 350px;
+  height: 350px;
+}
+
+.alex-card:hover{
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+}
+
+.alex-card h2{
+text-align: center;
+color: #fefae0;
+}
+
+.alex-card p {
+  margin-top: 20px;
+  text-align: center;
+  color: #fefae0;
+}
+
+.btn-booking {
+  color: #639438;
+  background-color: #fefae0;
+  border-radius: 50px;
+  padding: 10px 100px 10px 100px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.alex-content{
+display: flex;
+flex-direction: column;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.btn-booking:hover{
+  text-decoration: none;
+  color: #603e35;
 }
