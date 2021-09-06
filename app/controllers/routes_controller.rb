@@ -1,24 +1,25 @@
 class RoutesController < ApplicationController
-  # geocoded_by :location
-  # after_validation :geocode, if: :will_save_change_to_location?
 
   before_action :set_route, only: [:show, :edit, :update]
 
   def index
-    @routes = Route.all
     if params[:query].present?
       @routes = Route.near(params[:query])
+    else
+      @routes = Route.all
+      p @routes
     end
     @markers = @routes.geocoded.map do |route|
       {
         lat: route.latitude,
         lng: route.longitude,
-      #  latitude: 53.364507286303024,
-      #  longitude: -1.817374775658692,
-      #  info_window: render_to_string(partial: "info_window", locals: { route: route }),
-      #  image_url: helpers.asset_url('marker_test.png')
+        #  latitude: 53.364507286303024,
+        #  longitude: -1.817374775658692,
+        info_window: render_to_string(partial: "info_window", locals: { route: route }),
+        image_url: helpers.asset_url('marker_test.png')
       }
     end
+    p @routes
   end
 
   # def near_me

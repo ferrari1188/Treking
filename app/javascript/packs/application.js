@@ -16,6 +16,8 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+// CSS
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
