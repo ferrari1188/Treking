@@ -17,6 +17,7 @@ h1{
   font-size: 25px;
   background-color: #fff;
   border-radius: 5px;
+  padding: 40px;
 }
 
 .home-container{
@@ -29,11 +30,14 @@ h1{
   margin-bottom: 20px;
 }
 
+
 .cards{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+
 
 @media (max-width: 728px) {
   .home-container {
