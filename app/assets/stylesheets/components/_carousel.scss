@@ -2,3 +2,35 @@
   width: 100% !important;
   height: 75vh;
 }
+.btn-large {
+  color: #0b0b0b;
+  padding: 12px 28px;
+  border-radius: 4px;
+  background: linear-gradient(45deg,
+      #d8a47f,
+      #d1b39e);
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  color: white;
+  background: linear-gradient(45deg,
+      #603e35,
+      #d9905b);
+}
+// .carousel-caption {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   height: 100%;
+//   text-shadow:  0px 2px 3px rgba(0, 0, 0, 0.3);
+// }
+// .carousel-caption h1 {
+//   display: inline-block;
+
+// }
+// .carousel-caption a h1 {
+//   color: white;
+//   text-decoration: none;
+//   text-transform: none;
+// }
