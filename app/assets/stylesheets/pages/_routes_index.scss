@@ -1,55 +1,26 @@
 // Specific CSS for your routes-index
-body {
-  background-color: #fefae0;
-  margin: 0;
+
+.index-heading{
+   padding-top: 50px;
+   text-align: center;
+   font-size: 25px;
 }
 
-h1 {
-  padding-bottom: 25px;
-}
-
-.components {
-  margin-top: 100px;
-}
-
-.main-paragraph {
-  text-align: center;
-  font-size: 25px;
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 5px;
-}
-
-.index-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.index-container {
-  margin: 50px 50px;
-  background-color: #fff;
-  padding: 50px;
-  border-radius: 10px;
-}
  .search-container {
    position: relative;
-  //  min-width: 500px;
-  //  max-width: 500px;
    justify-content: center;
-   margin: 50px 120px;
-  // display: flex;
+   margin: 40px 180px;
  }
-.index-container{
-  margin: 50px 50px;
-  background:transparent;
-  padding: 50px;
-  border-radius: 10px;
-}
 
-.card-container h2 {
-  text-align: center;
-}
+ .map-container{
+   max-width: 1219px;
+   align-items: center;
+   margin: auto;
+ }
+
+
+/* Carrusel Items */
+
 .carousel-caption {
   display: flex;
   flex-direction: column;
@@ -60,7 +31,6 @@ h1 {
 
 .carousel-caption h1 {
   display: inline-block;
-
 }
 
 .carousel-caption a h1 {
