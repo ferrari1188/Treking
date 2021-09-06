@@ -1,0 +1,22 @@
+.show-intro-description {
+  padding: 40px;
+}
+
+.show-description-card {
+  background: linear-gradient(45deg,
+   #4d544c,
+   #639438);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  height: 600px;
+  width: auto;
+  margin-left: 30px;
+}
+
+.show-description-card h2{
+color: #fefae0;
+}
+
+.show-description-card p {
+  color: #fefae0;
+}

@@ -1,26 +1,40 @@
-<div class="container-banner" style="background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fd2exd72xrrp1s7.cloudfront.net%2Fwww%2F000%2F1k3%2Fda%2Fda83ed3bv0veyqg1oqgz71bh2ue3m2i9-uhi4721559%2F0%3Fwidth%3D768%26height%3D576%26crop%3Dtrue);">
-  <div class="banner">
-    <h1><%= @route.name %></h1>
-  </div>
+<div class="container-banner-show"
+	style="background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fd2exd72xrrp1s7.cloudfront.net%2Fwww%2F000%2F1k3%2Fda%2Fda83ed3bv0veyqg1oqgz71bh2ue3m2i9-uhi4721559%2F0%3Fwidth%3D768%26height%3D576%26crop%3Dtrue);">
+	<div class="banner-show">
+		<h1><%= @route.name %></h1>
+	</div>
 </div>
 
 <div class="home-container">
+	<div class="show-intro-description">
+		<h2><%= @route.name %></h2>
+		<p><%= @route.description %>. Intermediate Hiking Tour. Good fitness required. Easily-accessible paths. Suitable for
+			all skill levels. The starting point of the Tour is accessible with public transport.</p>
+		<p>Standing at 852 feet (260 metres) above sea level, Coombe Hill is the highest viewpoint in the Chilterns. From
+			the summit, you experience enchanting views over the Aylesbury Vale and even as far as the Cotswolds on a clear
+			day. The chalk grassland is one of the rarest habitats owned by the National Trust and has been designated as a
+			Site of Special Scientific Interest. On the west slopes you can see the nests of the extremely rare yellow meadow
+			ant erupting from the landscape. The reserve is home to more than 30 species of wildflower and 28 species of
+			butterfly.</p>
+	</div>
+
 	<div class="fixed-map-show-container">
 		<div class="row">
-    	<div class="col-4">
-    	  <p>Details</p>
-				<div>
-					<h2><%= @route.name %></h2>
+			<div class="col-4">
+				<div class="show-description-card">
+					<h2>Details</h2>
 					<p><%= @route.description %></p>
 					<p>Where: <%= @route.location_category %></p>
-					<p>How long will it take me: <%= @route.time %></p>
-					<p>How far: <%= @route.distance %></p>
+					<p>Difficulty: <i class="fas fa-hiking"></i> Intermediate</p>
+					<p>How long will it take me: <i class="far fa-clock"></i> <%= @route.time %></p>
+					<p>How far: <i class="fas fa-arrows-alt-h"></i> <%= @route.distance %></p>
 					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
-					Notifications 📍
+						Notifications 📍
 					</button>
 
 					<!-- Modal -->
-					<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+					<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+						aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -31,52 +45,51 @@
 								</div>
 								<div class="modal-body">
 									<h1>Notifications 📍</h1>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1455218873509-8097305ee378?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)">
-								<h2>Notifications 1</h2>
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
-								<h2>Notifications 2</h2>
-
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
-							<h2>Notifications 3</h2>
-
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
-								<h2>Notifications 4</h2>
-
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1420745981456-b95fe23f5753?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
-								<h2>Notifications 5</h2>
-
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1422564030440-1ecae6e21f67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1401&q=80)">
-								<h2>Notifications 6</h2>
-
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80)">
-								<h2>Notifications 7</h2>
-
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1581645956689-e4328c5002d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=675&q=80)">
-								<h2>Notifications 8</h2>
-
-							</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-primary">Save changes</button>
+									<div class="card-category"
+										style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1455218873509-8097305ee378?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)">
+										<h2>Notifications 1</h2>
+									</div>
+									<div class="card-category"
+										style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+										<h2>Notifications 2</h2>
+									</div>
+									<div class="card-category"
+										style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+										<h2>Notifications 3</h2>
+									</div>
+									<div class="card-category"
+										style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+										<h2>Notifications 4</h2>
+									</div>
+									<div class="card-category"
+										style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1420745981456-b95fe23f5753?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+										<h2>Notifications 5</h2>
+									</div>
+									<div class="card-category"
+										style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1422564030440-1ecae6e21f67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1401&q=80)">
+										<h2>Notifications 6</h2>
+									</div>
+									<div class="card-category"
+										style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80)">
+										<h2>Notifications 7</h2>
+									</div>
+									<div class="card-category"
+										style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1581645956689-e4328c5002d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=675&q=80)">
+										<h2>Notifications 8</h2>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Save changes</button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-    	</div>
-    	<div class="col-8">
+			</div>
+			<div class="col-8">
 				<div id="map3d" data-coords="<%= @coordinates %>"></div>
-    	</div>
-  	</div>
-	</div>
-	<div class="interactive-map-show-page">
+			</div>
+		</div>
 	</div>
 </div>

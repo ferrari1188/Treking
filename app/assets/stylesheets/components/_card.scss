@@ -50,7 +50,7 @@ x
    background-color: #fff;
 }
 
-.alex-card {
+.show-description-card {
   background: linear-gradient(45deg,
    #4d544c,
    #639438);
@@ -61,16 +61,16 @@ x
   margin-bottom: 20px;
 }
 
-.alex-card:hover{
+.show-description-card {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
 }
 
-.alex-card h2{
+.show-description-card h2{
 text-align: center;
 color: #fefae0;
 }
 
-.alex-card p {
+.show-description-card p {
   margin-top: 20px;
   text-align: center;
   color: #fefae0;
