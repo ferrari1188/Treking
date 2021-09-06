@@ -11,6 +11,15 @@
       zoom: 12,
       interactive: true
     });
+    map3d.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true,
+        showUserHeading: true
+      })
+    );
     map3d.on('load', () => {
       map3d.addSource('route', {
         'type': 'geojson',
