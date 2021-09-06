@@ -9,8 +9,6 @@
       style: 'mapbox://styles/mapbox/outdoors-v11',
       center: coords3d[16],
       zoom: 12,
-      pitch: 60,
-      bearing: 80,
       interactive: true
     });
     map3d.on('load', () => {
@@ -35,8 +33,9 @@
         },
         'paint': {
           'line-color': '#0058CA',
-          'line-width': 8,
-          'line-opacity': 0.65
+          'line-width': 2,
+          'line-opacity': 0.65,
+          'line-gap-width': 1
         }
       });
 
@@ -47,6 +46,16 @@
         maxZoom: 16
       });
       map3d.setTerrain({ source: "mapbox-dem" });
+
+      map3d.addLayer({
+        id: 'hillshading',
+        source: 'mapbox-dem',
+        type: 'hillshade',
+        paint: {
+          'hillshade-exaggeration': 0.5,
+          'hillshade-illumination-anchor': 'map'
+        }
+      });
 
       map3d.addLayer({
         id: "sky",
