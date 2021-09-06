@@ -12,10 +12,11 @@ class RoutesController < ApplicationController
     @markers = @routes.geocoded.map do |route|
       {
         lat: route.latitude,
-        lng: route.longitude
-        # info_window: render_to_string(partial: "info_window", locals: { route: route }),
-        # image_url: helpers.asset_url('marker2.png')
-
+        lng: route.longitude,
+      #  latitude: 53.364507286303024,
+      #  longitude: -1.817374775658692,
+      #  info_window: render_to_string(partial: "info_window", locals: { route: route }),
+      #  image_url: helpers.asset_url('marker_test.png')
       }
     end
   end

@@ -40,3 +40,31 @@ h1 {
    margin: 50px 120px;
   // display: flex;
  }
+.index-container{
+  margin: 50px 50px;
+  background:transparent;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.card-container h2 {
+  text-align: center;
+}
+.carousel-caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption h1 {
+  display: inline-block;
+
+}
+
+.carousel-caption a h1 {
+  color: white;
+  text-decoration: none;
+  text-transform: none;
+}
