@@ -38,7 +38,7 @@
 
 <div class="home-container">
 
-	<div data-aos="fade-down" class="main-paragraph">
+	<div data-aos="fade-left" class="main-paragraph">
     <h1>📍</h1>
 		<h2><%= @route.name %></h2>
 		<p><%= @route.description %>. Intermediate Hiking Tour. Good fitness required. Easily-accessible paths. Suitable for
@@ -78,38 +78,19 @@
 				  <a href="" class="btn-booking-show">Add Notifications</a>
    </div >
 
-      <div class="col-8">
-      <h2> Notifications 📍 </h2>
-			 <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+<div class="col-8">
+<h2 data-aos="fade-left"> Notifications 📍</h2>
+ <% @notifications.each do |notification| %>
+			 <div data-aos="fade-left" class="card-product">
+          <img src="<%= notification.image%>">
           <div class="card-product-infos">
-          <h2>Notifications 📍 </h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+          <p>Description:<strong><%= notification.description %></strong></p>
+          <p>Notifiction Time:<strong><%= notification.notification_start %></strong></p>
+          <p>Location:<strong><%= notification.location %></strong></p>
+          <p>Latitude:<strong><%= notification.latitude %></strong></p>
+          <p>Longitude<strong><%= notification.longitude %></strong></p>
       </div>
     </div>
-
-       <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-          <h2>Notifications 📍 </h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-
-     <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-          <h2>Notifications 📍 </h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-
-     <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-          <h2>Notifications 📍 </h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
+  <%end%>
   </div>
 </div>
