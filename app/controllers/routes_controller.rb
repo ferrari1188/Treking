@@ -7,7 +7,6 @@ class RoutesController < ApplicationController
       @routes = Route.near(params[:query])
     else
       @routes = Route.all
-      p @routes
     end
     @markers = @routes.geocoded.map do |route|
       {
@@ -19,7 +18,7 @@ class RoutesController < ApplicationController
         image_url: helpers.asset_url('marker_test.png')
       }
     end
-    p @routes
+    p @markers.length
   end
 
   # def near_me
