@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :routes do
     resources :journeys, only: [:show, :new, :create, :edit, :update]
-    resources :notifications, only: [:create, :edit, :update]
+    resources :notifications, only: [:create]
   end
   resources :notifications, only: [:index, :show]
   resources :users, only: [:show]

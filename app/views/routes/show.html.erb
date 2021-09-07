@@ -59,7 +59,7 @@
 					<p>Difficulty: <i class="fas fa-hiking"></i> Intermediate</p>
 					<p>How long will it take me: <i class="far fa-clock"></i> <%= @route.time %></p>
 					<p>How far: <i class="fas fa-arrows-alt-h"></i> <%= @route.length %></p>
-				  <a href=""class="btn-booking-show">Add Notifications</a>
+				  <a data-toggle="modal" data-target="#exampleModalCenter" href=""class="btn-booking-show">Add Notifications</a>
    </div >
         <div class="col-8">
 				  <div data-aos="fade-left" id="map3d" data-coords="<%= @coordinates %>"></div>
@@ -92,5 +92,30 @@
       </div>
     </div>
   <%end%>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add New Notification</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for([ @route, @notification ]) do |f| %>
+          <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
+          <%= f.input :category, placeholder: 'Category', label: false %>
+          <%= f.input :location, placeholder: 'Location', label: false %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
