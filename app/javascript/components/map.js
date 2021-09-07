@@ -3,10 +3,10 @@
   if (map) {
     const coords3d = JSON.parse(document.getElementById("map3d").dataset.coords)
     // console.log(coords);
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleDI1MTk0IiwiYSI6ImNrczh1cTEzdzFxZ3AydXBoOWdnNHl6eWkifQ.PElLesF9Sva6VWgHD5mabQ';
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGhlbmVsYWdheWxlIiwiYSI6ImNrczBnMXJkNzFqdWQydW44YjYwbG9jdGMifQ.fQ6FI93dU-T3w9JY2BjHbA';
     const map3d = new mapboxgl.Map({
       container: 'map3d',
-      style: 'mapbox://styles/mapbox/outdoors-v11',
+      style: 'mapbox://styles/phenelagayle/ckta4p24v3kq917pcf7rgjedf',
       center: coords3d[16],
       zoom: 12,
       interactive: true
@@ -78,5 +78,24 @@
         .setLngLat(coords3d[0])
         .addTo(map3d);
     });
+
+
+  map3d.on('click', ({ point }) => {
+    // If the user clicked on one of your markers, get its information.
+    const features = map3d.queryRenderedFeatures(point, {
+      layers: ['trek-notifications'] // replace with your layer name
+    });
+    if (!features.length) {
+      return;
+    }
+    const feature = features[0];
+
+  const popup = new mapboxgl.Popup({ offset: [0, -15] })
+  .setLngLat(feature.geometry.coordinates)
+  .setHTML(
+    `<p>${feature.properties.Description}</p>`
+    )
+  .addTo(map3d);
+    });
+   }
   }
- }
