@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_164201) do
+ActiveRecord::Schema.define(version: 2021_09_07_123157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,14 +32,14 @@ ActiveRecord::Schema.define(version: 2021_09_06_164201) do
     t.float "latitude"
     t.float "longitude"
     t.datetime "notification_start", null: false
-    t.bigint "journey_id"
     t.text "description"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "notification_end"
     t.string "location"
-    t.index ["journey_id"], name: "index_notifications_on_journey_id"
+    t.bigint "route_id"
+    t.index ["route_id"], name: "index_notifications_on_route_id"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2021_09_06_164201) do
 
   add_foreign_key "journeys", "routes"
   add_foreign_key "journeys", "users"
-  add_foreign_key "notifications", "journeys"
+  add_foreign_key "notifications", "routes"
   add_foreign_key "routes", "users"
   add_foreign_key "waypoints", "routes"
 end

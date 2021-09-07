@@ -30,6 +30,7 @@ class RoutesController < ApplicationController
       [waypoint.longitude, waypoint.latitude]
     end
     @name = @route.name
+    @notifications = @route.notifications
   end
 
   # def new
