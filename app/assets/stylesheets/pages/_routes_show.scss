@@ -1,3 +1,9 @@
+.fixed-map-show-container{
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+}
+
 .show-description-card {
   display: flex;
   flex-direction: column;
@@ -8,7 +14,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   height: 600px;
-  width: auto;
+  width: 1000px;
   margin-left: 30px;
   margin-bottom: 30px;
 }
@@ -19,7 +25,6 @@ text-align: center;
 padding-top: 40px;
 margin-bottom: 30px;
 font-size: 35px;
-
 }
 
 .show-description-card p {
