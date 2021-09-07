@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 * {
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 body{
@@ -23,7 +24,7 @@ h1{
 .home-container{
   background-color: #fff;
   border-radius: 10px;
-  margin: 45px;
+  margin: 40px;
 }
 
 .home-cards{
