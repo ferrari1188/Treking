@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 * {
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 body{
@@ -12,53 +13,51 @@ h1{
   padding-bottom: 25px;
 }
 
-.components{
-  margin-top: 150px;
-}
-
-.main-paragraph{
+.main-paragraph {
   text-align: center;
-  font-size: 25px;
-  margin: 20px 60px;
+  font-size: 20px;
   background-color: #fff;
-  padding: 40px;
   border-radius: 5px;
-}
-
-.home-cards{
-  display: flex;
-  margin-bottom: 20px;
+  padding: 40px;
 }
 
 .home-container{
-  margin: 50px;
-  background-color:#fff;
-  padding: 5px 50px;
+  background-color: #fff;
   border-radius: 10px;
+  margin: 40px;
 }
 
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {}
-
-/* Portrait */
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {}
-
-/* Landscape */
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {}
-
-/* ----------- iPhone X ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {}
-
-/* Portrait */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {}
-
-/* Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {}
+.home-cards{
+  margin-bottom: 20px;
+}
 
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 250ms ease-in;
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+
+
+@media (max-width: 728px) {
+  .home-container {
+    margin: 0;
+  }
+  .container-banner p{
+   display: none;
+  }
+  .main-paragraph p{
+     width: 100%;
+  }
+  .main-paragraph h2{
+    margin-bottom: 50px;
+  }
+  .main-paragraph{
+    margin: 0;
+    padding: 0;
+  }
+  .alex-card{
+    margin-bottom: 20px;
+  }
 }

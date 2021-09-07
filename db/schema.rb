@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_03_104452) do
+ActiveRecord::Schema.define(version: 2021_09_06_164201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_09_03_104452) do
     t.string "route_image_url"
     t.string "location_category"
     t.string "time"
-    t.string "distance"
+    t.string "length"
     t.index ["user_id"], name: "index_routes_on_user_id"
   end
 

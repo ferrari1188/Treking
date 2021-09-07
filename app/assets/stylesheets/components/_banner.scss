@@ -1,7 +1,7 @@
 .container-banner {
   background-size: cover;
   background-position: center;
-  padding: 300px 0;
+  padding: 175px 0;
   border-radius: 0 0 20px 20px;
 }
 
@@ -94,4 +94,25 @@
   padding-right: 140px;
   text-align: center;
   margin: 30px;
+}
+
+
+.container-banner-show {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+  border-radius: 0 0 20px 20px;
+  max-height: 350px;
+}
+
+.banner-show h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+  font-size: 100px;
+  font-weight: bold;
+  padding-left: 30px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Raleway',sans-serif;
 }

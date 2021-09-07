@@ -1,43 +1,54 @@
 // Specific CSS for your routes-index
-body {
-  background-color: #fefae0;
-  margin: 0;
+
+.index-heading{
+   padding-top: 50px;
+   text-align: center;
+   font-size: 25px;
 }
 
-h1 {
-  padding-bottom: 25px;
-}
-
-.components {
-  margin-top: 100px;
-}
-
-.main-paragraph {
-  text-align: center;
-  font-size: 25px;
-  margin: 40px 60px;
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 5px;
-}
-
-.index-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.index-container {
-  margin: 50px 50px;
-  background-color: #fff;
-  padding: 50px;
-  border-radius: 10px;
-}
  .search-container {
    position: relative;
-  //  min-width: 500px;
-  //  max-width: 500px;
    justify-content: center;
-   margin: 50px 120px;
-  // display: flex;
+   margin: 40px 180px;
  }
+
+ .map-container{
+   max-width: 1219px;
+   align-items: center;
+   margin: auto;
+   padding-bottom: 20px;
+ }
+
+
+/* Carrusel Items */
+
+.carousel-caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption h1 {
+  display: inline-block;
+}
+
+.carousel-caption a h1 {
+  color: white;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.search-container{
+min-width: 1000px;
+}
+
+
+@media (max-width: 728px) {
+  .search-container {
+  min-width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}

@@ -32,7 +32,7 @@ peak = Route.new(
   longitude: -1.817374775658692,
   route_image_url: "https://i.ibb.co/YcZrC2Q/peak-district-map.png",
   time: "4 hours, 7 minutes",
-  distance: "7.98 mi",
+  length: "7.98 mi",
   location_category: "Peak District"
 )
 peak.save
@@ -44,7 +44,7 @@ lake = Route.new(
   latitude: 54.567520,
   longitude: -3.162795,
   time: "2 hours, 43 minutes",
-  distance: "5.19 mi",
+  length: "5.19 mi",
   location_category: "Lake District"
 )
 lake.save
@@ -56,7 +56,7 @@ scotland = Route.new(
   latitude: 56.79685,
   longitude: -5.003508,
   time: "8 hours, 20 minutes",
-  distance: "11.1 mi",
+  length: "11.1 mi",
   location_category: "Scottish Highlands"
 )
 scotland.save
@@ -68,7 +68,7 @@ snowdonia = Route.new(
   latitude: 53.068497,
   longitude: -4.076231,
   time: "4 hours, 53 minutes",
-  distance: "7.49 mi",
+  length: "7.49 mi",
   location_category: "Wales"
 )
 snowdonia.save
@@ -80,7 +80,7 @@ ireland = Route.new(
   latitude: 54.166667,
   longitude: -6.083333,
   time: "3 hours, 51 minutes",
-  distance: "6.99 mi",
+  length: "6.99 mi",
   location_category: "Northern Ireland"
 )
 ireland.save
@@ -92,7 +92,7 @@ new_forest = Route.new(
   latitude: 50.875875,
   longitude: -1.632772,
   time: "3 hours, 34 minutes",
-  distance: "8.53 mi",
+  length: "8.53 mi",
   location_category: "New Forest"
 )
 new_forest.save
