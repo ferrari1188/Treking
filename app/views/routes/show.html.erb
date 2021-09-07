@@ -59,10 +59,57 @@
 					<p>Difficulty: <i class="fas fa-hiking"></i> Intermediate</p>
 					<p>How long will it take me: <i class="far fa-clock"></i> <%= @route.time %></p>
 					<p>How far: <i class="fas fa-arrows-alt-h"></i> <%= @route.length %></p>
-				  <a href="" data-toggle="modal" data-target="#exampleModalLong"class="btn-booking-show">Notifications</a>
+				  <a href=""class="btn-booking-show">Add Notifications</a>
    </div >
         <div class="col-8">
 				  <div data-aos="fade-left" id="map3d" data-coords="<%= @coordinates %>"></div>
         </div>
+
 	</div>
+
+   <div class="fixed-map-show-container">
+				<div data-aos="fade-right" class="show-description-card">
+					<h2>Weather📍</h2>
+					<p><%= @route.description %></p>
+					<p>Where: <%= @route.location_category %></p>
+					<p>Difficulty: <i class="fas fa-hiking"></i> Intermediate</p>
+					<p>How long will it take me: <i class="far fa-clock"></i> <%= @route.time %></p>
+					<p>How far: <i class="fas fa-arrows-alt-h"></i> <%= @route.length %></p>
+				  <a href="" class="btn-booking-show">Add Notifications</a>
+   </div >
+
+      <div class="col-8">
+      <h2> Notifications 📍 </h2>
+			 <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+          <h2>Notifications 📍 </h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+
+       <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+          <h2>Notifications 📍 </h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+
+     <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+          <h2>Notifications 📍 </h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+
+     <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+          <h2>Notifications 📍 </h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+  </div>
 </div>

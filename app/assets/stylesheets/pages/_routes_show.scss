@@ -57,6 +57,11 @@ font-size: 35px;
   font-weight: bold;
 }
 
+.card-stack{
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 728px) {
   .row {
    flex-direction: column-reverse;
