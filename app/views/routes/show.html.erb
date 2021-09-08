@@ -65,18 +65,15 @@
 				  <div data-aos="fade-left" id="map3d" data-coords="<%= @coordinates %>"></div>
         </div>
 
-	</div>
+  </div>
 
-   <div class="fixed-map-show-container">
-				<div data-aos="fade-right" class="show-description-card">
+   <div class="fixed-map-show-container-weather">
+				<div data-aos="fade-right" class="show-description-card-weather">
+         <div class= "weather-card" id = "weather" data-longitude="<%= @route.longitude %>" data-latitude="<%= @route.latitude %>">
 					<h2>Weather📍</h2>
 					<p><%= @route.description %></p>
 					<p>Where: <%= @route.location_category %></p>
-					<p>Difficulty: <i class="fas fa-hiking"></i> Intermediate</p>
-					<p>How long will it take me: <i class="far fa-clock"></i> <%= @route.time %></p>
-					<p>How far: <i class="fas fa-arrows-alt-h"></i> <%= @route.length %></p>
-				  <a href="" class="btn-booking-show">Add Notifications</a>
-   </div >
+          <h3 class="mb-0 font-weight-bold" id="heading"></h3> <span class="description"></span>
 
 <div class="col-8">
 <h2 data-aos="fade-left"> Notifications 📍</h2>
@@ -96,10 +93,25 @@
           <p>Latitude: <strong><%= notification.latitude %></strong></p>
           <p>Longitude: <strong><%= notification.longitude %></strong></p>
       </div>
-    </div>
-  <%end%>
-  </div>
+      </div>
+      <div class="col-8">
+          <h2 data-aos="fade-left"> Notifications 📍</h2>
+            <% @notifications.each do |notification| %>
+			      <div data-aos="fade-left" class="card-product">
+            <img src="<%= notification.image%>">
+            <div class="card-product-infos">
+            <p>Description: <strong><%= notification.description %></strong></p>
+            <p>Notifiction Time: <strong><%= notification.notification_start %></strong></p>
+            <p>Location: <strong><%= notification.location %></strong></p>
+            <p>Latitude: <strong><%= notification.latitude %></strong></p>
+            <p>Longitude: <strong><%= notification.longitude %></strong></p>
+          </div>
+      </div>
+    <%end%>
+  </div >
 </div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

@@ -30,11 +30,11 @@ import { initMapbox } from '../packs/init_mapbox';
 import { initShowMap } from '../components/map';
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// import { initWeather } from '..//init_Weather';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  // initWeather();
   initMapbox();
   initShowMap();
 });
