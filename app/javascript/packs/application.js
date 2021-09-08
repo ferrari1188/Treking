@@ -40,3 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initShowMap();
   weather();
 });
+
+import "controllers"

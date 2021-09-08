@@ -110,52 +110,52 @@
       </div>
       </div>
       <div class="col-8">
-          <h2 data-aos="fade-left"> Notifications 📍</h2>
-            <% @notifications.each do |notification| %>
-			      <div data-aos="fade-left" class="card-product">
-            <% if notification.image.present? %>
-            <img src="<%= notification.image%>">
-          <% elsif notification.photo.attached? %>
-            <%= cl_image_tag notification.photo.key, height: 300, width: 400, crop: :fill %>
-          <% else %>
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" >
-          <% end %>
-            <div class="card-product-infos">
-            <p>Description: <strong><%= notification.description %></strong></p>
-            <p>Notifiction Time: <strong><%= notification.notification_start %></strong></p>
-            <p>Location: <strong><%= notification.location %></strong></p>
-            <p>Latitude: <strong><%= notification.latitude %></strong></p>
-            <p>Longitude: <strong><%= notification.longitude %></strong></p>
-          </div>
+        <h2 data-aos="fade-left"> Notifications 📍</h2>
+          <% @notifications.each do |notification| %>
+			      <div data-aos="fade-left" class="card-product" id="notif-<%= notification.id %>">
+              <% if notification.image.present? %>
+                <img src="<%= notification.image%>">
+              <% elsif notification.photo.attached? %>
+                <%= cl_image_tag notification.photo.key, height: 300, width: 400, crop: :fill %>
+              <% else %>
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" >
+              <% end %>
+                <div class="card-product-infos">
+                  <p>Description: <strong><%= notification.description %></strong></p>
+                  <p>Notification Time: <strong><%= notification.notification_start %></strong></p>
+                  <p>Location: <strong><%= notification.location %></strong></p>
+                  <p>Latitude: <strong><%= notification.latitude %></strong></p>
+                  <p>Longitude: <strong><%= notification.longitude %></strong></p>
+                </div>
+            </div>
+          <%end%>
+
+          <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add New Notification</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                      <%= simple_form_for([@route, @notification], remote: true) do |f| %>
+                        <div class="modal-body">
+                            <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
+                            <%= f.input :category, placeholder: 'Category', label: false %>
+                            <%= f.input :location, placeholder: 'Location', label: false %>
+                            <%= f.input :photo, as: :file %>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <%= f.submit class: "btn-booking-show" %>
+                        </div>
+                      <% end %>
+                </div>
+              </div>
+            </div>
       </div>
-    <%end%>
-  </div >
-</div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add New Notification</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <%= simple_form_for([@route, @notification]) do |f| %>
-        <div class="modal-body">
-            <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
-            <%= f.input :category, placeholder: 'Category', label: false %>
-            <%= f.input :location, placeholder: 'Location', label: false %>
-            <%= f.input :photo, as: :file %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= f.submit class: "btn-booking-show" %>
-        </div>
-      <% end %>
     </div>
-  </div>
+  </div >
 </div>
