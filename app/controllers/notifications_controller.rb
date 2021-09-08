@@ -13,30 +13,28 @@ class NotificationsController < ApplicationController
   def show
   end
 
-
-  def new
-    @notifications = Notification.new
-  end
-
   def create
-    @notifications = Notification.new(notification_params)
-    @notifications.user = current_user
-    if @notifications.save
-      redirect_to notification_path(@route), notice: 'notification was successfully created.'
+    @route = Route.find(params[:route_id])
+    @notification = Notification.new(notification_params)
+    # @notification.user = current_user
+    @notification.route = @route
+    @notification.notification_start = Time.now
+    if @notification.save
+      redirect_to route_path(@route), notice: 'Notification was successfully created.'
     else
-      render :new
+      @waypoints = @route.waypoints
+      @coordinates = @waypoints.map do |waypoint|
+        [waypoint.longitude, waypoint.latitude]
+      end
+      @name = @route.name
+      @notifications = @route.notifications
+      render 'routes/show'
     end
   end
 
-  def edit
-  end
+  private
 
-  def update
-    @notifications.update(notification_params)
-    if @notifications.save
-      redirect_to notification_path(@route), notice: 'notification was successfully updated.'
-    else
-      render :edit
-    end
+  def notification_params
+    params.require(:notification).permit(:category, :latitude, :longitude, :notification_start, :description, :location)
   end
 end

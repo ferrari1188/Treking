@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Notification.destroy_all
-Journey.destroy_all
 Waypoint.destroy_all
 Route.destroy_all
 User.destroy_all
@@ -187,5 +186,89 @@ peak_coordinates.each_with_index do |coordinate, index|
   puts "Waypoint #{waypoint.sequence} created! Longitude: #{waypoint.longitude}. Latitude: #{waypoint.latitude}."
 end
 
-
 puts "Waypoints created"
+
+ edale_rocks = Notification.new(
+  route_id: peak.id,
+  category: "alert",
+  description: "Lost Dog",
+  latitude: 53.375347686509485,
+  longitude: -1.81898832321167,
+  image: "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
+  location: "Peak District"
+)
+
+edale_rocks.save
+
+edale_rocks_slope = Notification.new(
+  route_id: peak.id,
+  category: "alert",
+  description: "Very Slippery Slope",
+  latitude: 53.3812997395862,
+  longitude: -1.8265414237976074,
+  image: "https://images.unsplash.com/photo-1573999057085-b85ad6fb018c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
+  location: "Peak District"
+)
+
+edale_rocks_slope.save
+
+edale_rocks_wildlife = Notification.new(
+  route_id: peak.id,
+  category: "alert",
+  description: "Great Photo of Wildlife",
+  latitude: 53.381402133220114,
+  longitude: -1.8444156646728513,
+  image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1498&q=80",
+  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
+  location: "Peak District"
+)
+
+edale_rocks_wildlife.save
+
+
+edale_rocks_views = Notification.new(
+  route_id: peak.id,
+  category: "alert",
+  description: "Great spot to take some photos of amazing views",
+  latitude: 53.381402133220114,
+  longitude: -1.8444156646728513,
+  image: "https://images.unsplash.com/photo-1493585552824-131927c85da2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80",
+  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
+  location: "Peak District"
+)
+
+edale_rocks_views.save
+
+
+
+edale_rocks_team_trek = Notification.new(
+  route_id: peak.id,
+  category: "alert",
+  description: "Amazing photo of team trek!",
+  latitude:  53.37270419618348,
+  longitude: -1.869306564331055,
+  image: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
+  location: "Peak District"
+)
+
+edale_rocks_team_trek.save
+
+
+edale_rocks_picnic = Notification.new(
+  route_id: peak.id,
+  category: "alert",
+  description: "Great spot for a picknic",
+  latitude:  53.36626440241836,
+  longitude:   -1.855466365814209,
+  image: "https://images.unsplash.com/photo-1590166774851-bc49b23a18fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=670&q=80",
+  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
+  location: "Peak District"
+)
+
+edale_rocks_picnic.save
+
+
+puts "created notification"

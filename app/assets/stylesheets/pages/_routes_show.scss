@@ -44,7 +44,6 @@ font-size: 35px;
   font-weight: bold;
 }
 
-
 .btn-booking-show:hover {
   text-decoration: none;
   color: #603e35;
@@ -55,6 +54,11 @@ font-size: 35px;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
   font-size: 100px;
   font-weight: bold;
+}
+
+.card-stack{
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 728px) {

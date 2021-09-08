@@ -1,16 +1,10 @@
 // Specific CSS for your routes-index
 
 .index-heading{
-   padding-top: 50px;
+   margin: 80px;
    text-align: center;
    font-size: 25px;
 }
-
- .search-container {
-   position: relative;
-   justify-content: center;
-   margin: 40px 180px;
- }
 
  .map-container{
    max-width: 1219px;
@@ -41,9 +35,8 @@
 }
 
 .search-container{
-min-width: 1000px;
+ margin: 50px;
 }
-
 
 @media (max-width: 728px) {
   .search-container {
