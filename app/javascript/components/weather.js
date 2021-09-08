@@ -10,7 +10,7 @@ const weather = () => {
   const wind = document.getElementById("wind");
   const humidity = document.getElementById("umidity");
   const icon = document.getElementById("icon");
-  // const sun = document.getElementById("sun");
+  const sun = document.getElementById("sun");
 
   fetch(url)
   .then(response => response.json())
@@ -28,13 +28,14 @@ const weather = () => {
     icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
     wind.innerText = data.wind.speed;
     humidity.innerText = data.main.humidity;
-    // const unixTimestamp = data.sys.sunrise * 1000;
-    // const milliseconds = new Date(unixTimestamp);
-    // const sunrise = dateObject.toLocaleString("en-US", {hour: "numeric", minute: "numeric"})
+    const unixTimestamp = data.sys.sunrise * 1000;
+    const milliseconds = new Date(unixTimestamp);
+    const sunrise = milliseconds.toLocaleString("en-US", {hour: "numeric", minute: "numeric"})
 
-    // const unixTimestamp = data.sys.sunset * 1000;
-    // const milliseconds = new Date(unixTimestamp);
-    // const sunset= dateObject.toLocaleString("en-US", {hour: "numeric", minute: "numeric"})
+    const uniTimestamp = data.sys.sunset * 1000;
+    const millisecond = new Date(uniTimestamp);
+    const sunset= millisecond.toLocaleString("en-US", {hour: "numeric", minute: "numeric"})
+    sun.innerText = `${sunrise} - ${sunset}`
 
     });
 
