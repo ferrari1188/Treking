@@ -1,3 +1,17 @@
+.home-container-profile{
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 40px;
+}
+
+.fixed-profile-show-container{
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .container.db-social {
   margin-right: 0 !important;
   margin-left: 0 !important;
@@ -21,7 +35,8 @@
 }
 
 .container-fluid {
-  padding: 30px 30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .db-social .head-profile {

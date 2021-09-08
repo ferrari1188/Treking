@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :routes do
+    member do
+      get 'map'
+    end
     resources :notifications, only: [:create]
   end
   resources :notifications, only: [:index, :show]

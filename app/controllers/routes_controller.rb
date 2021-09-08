@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
 
-  before_action :set_route, only: [:show, :edit, :update]
+  before_action :set_route, only: [:show, :map]
 
   def index
     if params[:query].present?
@@ -21,9 +21,6 @@ class RoutesController < ApplicationController
     p @markers.length
   end
 
-  # def near_me
-  # end
-
   def show
     @waypoints = @route.waypoints
     @coordinates = @waypoints.map do |waypoint|
@@ -31,42 +28,15 @@ class RoutesController < ApplicationController
     end
     @name = @route.name
     @notification = Notification.new
-    @notifications = @route.notifications
+    @notifications = @route.notifications.order(created_at: :desc)
   end
 
-  # def new
-  #   @route = Route.new
-  # end
+  def map
+  end
 
-  # def create
-  #   @route = Route.new(route_params)
-  #   @route.user = current_user
-  #   if @route.save
-  #     redirect_to route_path(@route), notice: 'route was successfully created.'
-  #   else
-  #     render :new
-  #   end
-  # end
-
-  # def edit
-  # end
-
-  # def update
-  #   @route.update(route_params)
-  #   if @route.save
-  #     redirect_to route_path(@route), notice: 'route was successfully updated.'
-  #   else
-  #     render :edit
-  #   end
-  # end
-
-  # private
+  private
 
   def set_route
     @route = Route.find(params[:id])
   end
-
-  # def route_params
-  #   params.require(:route).permit(start_location, end_location)
-  # end
 end
