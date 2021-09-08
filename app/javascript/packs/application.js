@@ -28,6 +28,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import "bootstrap";
 import { initMapbox } from '../packs/init_mapbox';
 import { initShowMap } from '../components/map';
+import  { weather } from '../components/weather';
 
 // Internal imports, e.g:
 // import { initWeather } from '..//init_Weather';
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // initWeather();
   initMapbox();
   initShowMap();
+  weather();
 });
 
 import "controllers"
