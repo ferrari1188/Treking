@@ -118,7 +118,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-    <%= simple_form_for([@route, @notification]) do |f| %>
+      <%= simple_form_for([@route, @notification]) do |f| %>
         <div class="modal-body">
             <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
             <%= f.input :category, placeholder: 'Category', label: false %>
