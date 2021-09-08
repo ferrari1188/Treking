@@ -1,29 +1,46 @@
-.weather-card {
-  background-color: #ffffff;
-  border-radius: 50px;
-  color: #6f707d;
-  font-family: 'Marcellus', serif
+.fa-sun, .fa-wind, .fa-tint {
+   font-size : 50px;
+   margin-bottom :20px;
+   color: #fefae0;
+   }
+
+
+
+.show-description-card-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(45deg,
+      #0384fc,
+      #03e3fc);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  height: 450px;
+  width: 412px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+
 }
 
-#heading {
-  font-size: 55px;
-  color: #2b304d
+.show-description-card-weather h2 {
+  color: #fefae0;
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: 30px;
+  font-size: 35px;
 }
 
-.temp {
-  place-items: center
+.show-description-card-weather p {
+  color: #fefae0;
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
-.temp-details>p>span,
-.grey {
-  color: #a3acc1;
-  font-size: 12px
-}
-
-.fa {
-  color: #a5a5b1
-}
-
-*:focus {
-  outline: none
+.icons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
