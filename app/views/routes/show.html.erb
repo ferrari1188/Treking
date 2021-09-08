@@ -62,11 +62,11 @@
           <%= link_to "Start Route", map_route_path(@route), class: "btn-booking-show" %>
 				  <a data-toggle="modal" data-target="#exampleModalCenter" href=""class="btn-booking-show">Add Notifications</a>
    </div >
-        <div class="col-8">
+
 				  <div data-aos="fade-left" id="map3d" data-coords="<%= @coordinates %>"></div>
         </div>
 
-  </div>
+
 
   <div class="container-fluid">
     <div class="row justify-content-center">
@@ -111,6 +111,7 @@
       </div>
       </div>
       <div class="col-8">
+
         <h2 data-aos="fade-left"> Notifications 📍</h2>
           <% @notifications.each do |notification| %>
 			      <div data-aos="fade-left" class="card-product" id="notif-<%= notification.id %>">
