@@ -84,11 +84,9 @@
       </div>
       </div>
       <div class="col-8">
-        <div data-controller="insert-in-list">
-          <div data-insert-in-list-target="items">
             <h2 data-aos="fade-left"> Notifications 📍</h2>
               <% @notifications.each do |notification| %>
-			        <div data-aos="fade-left" class="card-product">
+			        <div data-aos="fade-left" class="card-product" id="notif-<%= notification.id %>">
                 <% if notification.image.present? %>
                   <img src="<%= notification.image%>">
                 <% elsif notification.photo.attached? %>
@@ -98,14 +96,14 @@
                 <% end %>
                 <div class="card-product-infos">
                   <p>Description: <strong><%= notification.description %></strong></p>
-                  <p>Notifiction Time: <strong><%= notification.notification_start %></strong></p>
+                  <p>Notification Time: <strong><%= notification.notification_start %></strong></p>
                   <p>Location: <strong><%= notification.location %></strong></p>
                   <p>Latitude: <strong><%= notification.latitude %></strong></p>
                   <p>Longitude: <strong><%= notification.longitude %></strong></p>
                 </div>
               </div>
             <%end%>
-          </div>
+
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -117,7 +115,7 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                      <%= simple_form_for([@route, @notification]), data: { insert_in_list_target: 'form' }), action: 'submit->insert-in-list#send' do |f| %>
+                      <%= simple_form_for([@route, @notification], remote: true) do |f| %>
                         <div class="modal-body">
                             <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
                             <%= f.input :category, placeholder: 'Category', label: false %>
@@ -133,7 +131,6 @@
                 </div>
               </div>
             </div>
-        </div>
     </div>
   </div >
 </div>

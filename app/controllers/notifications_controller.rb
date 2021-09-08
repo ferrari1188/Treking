@@ -20,7 +20,7 @@ class NotificationsController < ApplicationController
     @notification.route = @route
     @notification.notification_start = Time.now
     if @notification.save
-      redirect_to route_path(@route), notice: 'Notification was successfully created.'
+      redirect_to route_path(@route, anchor: "notif-#{@notification.id}"), notice: 'Notification was successfully created.'
     else
       @waypoints = @route.waypoints
       @coordinates = @waypoints.map do |waypoint|

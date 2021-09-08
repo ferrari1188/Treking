@@ -31,7 +31,7 @@ class RoutesController < ApplicationController
     end
     @name = @route.name
     @notification = Notification.new
-    @notifications = @route.notifications
+    @notifications = @route.notifications.order(created_at: :desc)
   end
 
   # def new
