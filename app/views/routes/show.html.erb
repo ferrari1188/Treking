@@ -59,6 +59,7 @@
 					<p>Difficulty: <i class="fas fa-hiking"></i> Intermediate</p>
 					<p>How long will it take me: <i class="far fa-clock"></i> <%= @route.time %></p>
 					<p>How far: <i class="fas fa-arrows-alt-h"></i> <%= @route.length %></p>
+          <%= link_to "Start Route", map_route_path(@route), class: "btn-booking-show" %>
 				  <a data-toggle="modal" data-target="#exampleModalCenter" href=""class="btn-booking-show">Add Notifications</a>
    </div >
 
@@ -66,6 +67,32 @@
         </div>
 
 
+
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-4 ">
+        <div class="weather-card" data-longitude="<%= @route.longitude %>" data-latitude="<%= @route.latitude %>" data-key="<%= ENV['OPENWEATHER_API_KEY'] %>">>
+          <div class="d-flex" id="weather"></div>
+          <div class="d-flex">
+            <h6 class="flex-grow-1"><%= @route.name %></h6>
+            <h6 id="date"></h6>
+          </div>
+          <div class="d-flex flex-column temp mt-5 mb-3">
+            <h1 class="mb-0 font-weight-bold" id="heading"></h1> <span id="description"></span>
+          </div>
+            <div> <img src="" id="icon"> </div>
+          <div class="d-flex">
+            <div class="temp-details flex-grow-1">
+              <p class="my-1"> <img src="https://i.imgur.com/B9kqOzp.png" height="17px"> <span id="wind"> </span> </p>
+              <p class="my-1"> <i class="fa fa-tint mr-2" aria-hidden="true"></i> <span id="umidity"></span> </p>
+              <p class="my-1"> <img src="https://i.imgur.com/wGSJ8C5.png" height="17px"> <span id="sun"> </span> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
    <div class="fixed-map-show-container-weather">
 				<div data-aos="fade-right" class="show-description-card-weather">
@@ -84,52 +111,53 @@
       </div>
       </div>
       <div class="col-8">
-          <h2 data-aos="fade-left"> Notifications 📍</h2>
-            <% @notifications.each do |notification| %>
-			      <div data-aos="fade-left" class="card-product">
-            <% if notification.image.present? %>
-            <img src="<%= notification.image%>">
-          <% elsif notification.photo.attached? %>
-            <%= cl_image_tag notification.photo.key, height: 300, width: 400, crop: :fill %>
-          <% else %>
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" >
-          <% end %>
-            <div class="card-product-infos">
-            <p>Description: <strong><%= notification.description %></strong></p>
-            <p>Notifiction Time: <strong><%= notification.notification_start %></strong></p>
-            <p>Location: <strong><%= notification.location %></strong></p>
-            <p>Latitude: <strong><%= notification.latitude %></strong></p>
-            <p>Longitude: <strong><%= notification.longitude %></strong></p>
-          </div>
+
+        <h2 data-aos="fade-left"> Notifications 📍</h2>
+          <% @notifications.each do |notification| %>
+			      <div data-aos="fade-left" class="card-product" id="notif-<%= notification.id %>">
+              <% if notification.image.present? %>
+                <img src="<%= notification.image%>">
+              <% elsif notification.photo.attached? %>
+                <%= cl_image_tag notification.photo.key, height: 300, width: 400, crop: :fill %>
+              <% else %>
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" >
+              <% end %>
+                <div class="card-product-infos">
+                  <p>Description: <strong><%= notification.description %></strong></p>
+                  <p>Notification Time: <strong><%= notification.notification_start %></strong></p>
+                  <p>Location: <strong><%= notification.location %></strong></p>
+                  <p>Latitude: <strong><%= notification.latitude %></strong></p>
+                  <p>Longitude: <strong><%= notification.longitude %></strong></p>
+                </div>
+            </div>
+          <%end%>
+
+          <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add New Notification</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                      <%= simple_form_for([@route, @notification], remote: true) do |f| %>
+                        <div class="modal-body">
+                            <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
+                            <%= f.input :category, placeholder: 'Category', label: false %>
+                            <%= f.input :location, placeholder: 'Location', label: false %>
+                            <%= f.input :photo, as: :file %>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <%= f.submit class: "btn-booking-show" %>
+                        </div>
+                      <% end %>
+                </div>
+              </div>
+            </div>
       </div>
-    <%end%>
-  </div >
-  </div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add New Notification</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <%= simple_form_for([@route, @notification]) do |f| %>
-        <div class="modal-body">
-            <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
-            <%= f.input :category, placeholder: 'Category', label: false %>
-            <%= f.input :location, placeholder: 'Location', label: false %>
-            <%= f.input :photo, as: :file %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= f.submit class: "btn-booking-show" %>
-        </div>
-      <% end %>
     </div>
-  </div>
+  </div >
 </div>
