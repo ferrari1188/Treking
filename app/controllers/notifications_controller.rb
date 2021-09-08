@@ -35,6 +35,6 @@ class NotificationsController < ApplicationController
   private
 
   def notification_params
-    params.require(:notification).permit(:category, :latitude, :longitude, :notification_start, :description, :location)
+    params.require(:notification).permit(:category, :photo, :latitude, :longitude, :notification_start, :description, :location)
   end
 end
