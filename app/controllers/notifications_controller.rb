@@ -7,12 +7,6 @@ class NotificationsController < ApplicationController
     end
   end
 
-  def near_me
-  end
-
-  def show
-  end
-
   def create
     @route = Route.find(params[:route_id])
     @notification = Notification.new(notification_params)
