@@ -93,7 +93,7 @@
   const popup = new mapboxgl.Popup({ offset: [0, -15] })
   .setLngLat(feature.geometry.coordinates)
   .setHTML(
-    `<p>${feature.properties.Description}</p>`
+    `<p>${feature.properties.description}</p>`
     )
   .addTo(map3d);
     });
