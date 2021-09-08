@@ -1,51 +1,81 @@
-<div class="container-banner" style="background-image: url(https://www.derwenthouse.co.uk/wp-content/uploads/2019/05/Howden-Dam-Upper-Derwent-peak-district.jpg);">
-  <div class="banner">
-    <h1>My Profile</h1>
-  </div>
+<div class="container db-social">
+    <div class="jumbotron jumbotron-fluid"></div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-11">
+                <div class="widget head-profile has-shadow">
+                    <div class="widget-body pb-0">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-xl-4 col-md-4 d-flex justify-content-lg-start justify-content-md-start justify-content-center">
+                                <ul>
+                                    <li>
+                                        <div class="counter">1</div>
+                                        <div class="heading">Treks completed</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-4 col-md-4 d-flex justify-content-center">
+                                <div class="image-default">
+                                    <img class="rounded-circle" src="https://avatars.githubusercontent.com/u/85831958?v=4" alt="...">
+                                </div>
+                                <div class="infos">
+                                    <h2>Steve Daniels</h2>
+                                    <div class="location">Holmer Green, Buckinghamshire, U.K</div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-4 d-flex justify-content-lg-end justify-content-md-end justify-content-center">
+                                <div class="follow">
+                                    <a class="btn btn-flat" href="#"><i class="la la-user-plus"></i>Edit profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="home-container">
+<div class="home-container-profile">
   <div class="row">
-    <div class="col-sm-4">
-      <div class="mx-auto" style="width: 200px;">
-        <img class="profile-avatar" src="https://avatars.githubusercontent.com/u/85831958?v=4" />
-      </div>
-      <div class="mx-auto mt-3" style="width: 200px;">
+    <div class="col-6">
+      <div class="profile-header">
+        <img class="profile-avatar" src="https://avatars.githubusercontent.com/u/85831958?v=4">
         <button type="button" class="btn btn-flat">Edit Your Profile 📍</button>
       </div>
     </div>
-    <div class="col-sm-8">
-      <div>
-        <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-        <p><%= @user.email %></p>
-      </div>
-      <div class="mt-5">
-        <div class="card-profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">My Friends</div>
-          <div class="container">
-            <div>
-              <ul class="list-unstyled avatars">
-                <div>
-                  <li><a href="#"><img src="https://avatars.githubusercontent.com/u/86057788?v=4" alt="Ben Avatar" class="friends-avatar"></a></li>
-                  <li><a href="#">Ben West</a></li>
-                </div>
-                <div>
-                  <li><a href="#"><img src="https://avatars.githubusercontent.com/u/85034630?v=4" alt="Chiara Avatar" class="friends-avatar"></a></li>
-                  <li><a href="#">Chiara Ferrari</a></li>
-                </div>
-                <div>
-                  <li><a href="#"><img src="https://avatars.githubusercontent.com/u/87246548?v=4" alt="Megan Avatar" class="friends-avatar"></a></li>
-                  <li><a href="#">Megan Luengo</a></li>
-                </div>
-              </ul>
-            </div>
-          </div>
-      </div>
+    <div class="col-6">
     </div>
   </div>
 </div>
 
 <div class="home-container">
   <div style="width: 21.5em;margin:0 auto;">
+  <div>
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    <p><%= @user.email %></p>
+  </div>
+  <div class="mt-5">
+    <div class="card-profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">My Friends</div>
+      <div class="container">
+        <div>
+          <ul class="list-unstyled avatars">
+            <div>
+              <li><a href="#"><img src="https://avatars.githubusercontent.com/u/86057788?v=4" alt="Ben Avatar" class="friends-avatar"></a></li>
+              <li><a href="#">Ben West</a></li>
+            </div>
+            <div>
+              <li><a href="#"><img src="https://avatars.githubusercontent.com/u/85034630?v=4" alt="Chiara Avatar" class="friends-avatar"></a></li>
+              <li><a href="#">Chiara Ferrari</a></li>
+            </div>
+            <div>
+              <li><a href="#"><img src="https://avatars.githubusercontent.com/u/87246548?v=4" alt="Megan Avatar" class="friends-avatar"></a></li>
+              <li><a href="#">Megan Luengo</a></li>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="card-profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">My Routes</div>
     <div class="card-profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">My Notifications</div>
   </div>
