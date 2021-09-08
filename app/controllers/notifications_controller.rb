@@ -18,6 +18,7 @@ class NotificationsController < ApplicationController
     @notification = Notification.new(notification_params)
     # @notification.user = current_user
     @notification.route = @route
+    @notification.notification_start = Time.now
     if @notification.save
       redirect_to route_path(@route), notice: 'Notification was successfully created.'
     else
@@ -34,6 +35,6 @@ class NotificationsController < ApplicationController
   private
 
   def notification_params
-    params.require(:notification).permit(:category, :latitude, :longitude, :notification_start, :description, :notification_end, :location)
+    params.require(:notification).permit(:category, :latitude, :longitude, :notification_start, :description, :location)
   end
 end
