@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_09_09_141609) do
     t.string "location"
     t.bigint "route_id"
     t.string "name"
+    t.string "added_by"
     t.index ["route_id"], name: "index_notifications_on_route_id"
   end
 
