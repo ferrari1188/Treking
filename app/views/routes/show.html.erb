@@ -104,7 +104,7 @@
       <% end %>
       <div class="card-product-infos">
         <h5><%= notification.description %></h5>
-        <p>Notification Time: <strong><%= notification.notification_start %></strong></p>
+        <p>Notification Added On: <strong><%= notification.notification_start.to_formatted_s(:long) %></strong></p>
         <p>Location: <strong><%= notification.location %></strong></p>
         <p>Latitude: <strong><%= notification.latitude %></strong></p>
         <p>Longitude: <strong><%= notification.longitude %></strong></p>
