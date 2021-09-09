@@ -14,8 +14,8 @@ User.destroy_all
 # emails.each do |email|
   user = User.new(
     email: 'hester25194@gmail.com',
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: "Steve",
+    last_name: "Daniels",
     password: "password"
   )
   user.save!
@@ -63,7 +63,7 @@ snowdonia.save
 ireland = Route.new(
   user: User.all.sample,
   description: "Slieve Binnian Summit Loop from Annalong",
-  name: "View of the Mourne Mountains",
+  name: "Mourne Mountains",
   latitude: 54.166667,
   longitude: -6.083333,
   time: "3 hours, 51 minutes",
@@ -176,77 +176,88 @@ end
 
 puts "Waypoints created"
 
- edale_rocks = Notification.new(
+edale_rocks_picnic = Notification.new(
   route_id: peak.id,
   category: "alert",
-  description: "Lost Dog",
-  latitude: 53.375347686509485,
-  longitude: -1.81898832321167,
-  image: "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
-  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
-  location: "Peak District"
+  name: "Great spot for a picnic",
+  description: "Picnic spot by the river. Should not be missed.",
+  added_by: "Megan Luengo",
+  latitude:  53.36626440241836,
+  longitude:   -1.855466365814209,
+  image: "https://images.unsplash.com/photo-1590166774851-bc49b23a18fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=670&q=80",
+  notification_start: Time.now - (0..30).to_a.sample.days - (0..24).to_a.sample.hours,
+  location: "Near Upper Booth"
 )
-edale_rocks.save
-
-edale_rocks_slope = Notification.new(
-  route_id: peak.id,
-  category: "alert",
-  description: "Very Slippery Slope",
-  latitude: 53.3812997395862,
-  longitude: -1.8265414237976074,
-  image: "https://images.unsplash.com/photo-1573999057085-b85ad6fb018c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
-  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
-  location: "Peak District"
-)
-edale_rocks_slope.save
-
-edale_rocks_wildlife = Notification.new(
-  route_id: peak.id,
-  category: "alert",
-  description: "Great Photo of Wildlife",
-  latitude: 53.381402133220114,
-  longitude: -1.8444156646728513,
-  image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1498&q=80",
-  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
-  location: "Peak District"
-)
-edale_rocks_wildlife.save
-
-edale_rocks_views = Notification.new(
-  route_id: peak.id,
-  category: "alert",
-  description: "Amazing views",
-  latitude: 53.381402133220114,
-  longitude: -1.8444156646728513,
-  image: "https://images.unsplash.com/photo-1493585552824-131927c85da2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80",
-  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
-  location: "Peak District"
-)
-edale_rocks_views.save
+edale_rocks_picnic.save
 
 edale_rocks_team_trek = Notification.new(
   route_id: peak.id,
   category: "alert",
-  description: "Amazing photo of team trek!",
+  name: "Amazing photo of Team Trek!",
+  description: "Team Trek rocks!",
+  added_by: "Anne de Joly",
   latitude:  53.37270419618348,
   longitude: -1.869306564331055,
   image: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
-  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
-  location: "Peak District"
+  notification_start: Time.now - (0..30).to_a.sample.days - (0..24).to_a.sample.hours,
+  location: "Jacob's Ladder"
 )
 edale_rocks_team_trek.save
 
-edale_rocks_picnic = Notification.new(
+edale_rocks_views = Notification.new(
   route_id: peak.id,
   category: "alert",
-  description: "Great spot for a picnic",
-  latitude:  53.36626440241836,
-  longitude:   -1.855466365814209,
-  image: "https://images.unsplash.com/photo-1590166774851-bc49b23a18fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=670&q=80",
-  notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
-  location: "Peak District"
+  name: "Amazing views",
+  description: "Took a photo from the peak. The view is immense!",
+  added_by: "Bruno Talarico",
+  latitude: 53.381402133220114,
+  longitude: -1.8444156646728513,
+  image: "https://images.unsplash.com/photo-1493585552824-131927c85da2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80",
+  notification_start: Time.now - (0..30).to_a.sample.days - (0..24).to_a.sample.hours,
+  location: "Kinder Low, Pennine Way"
 )
-edale_rocks_picnic.save
+edale_rocks_views.save
 
+edale_rocks_wildlife = Notification.new(
+  route_id: peak.id,
+  category: "alert",
+  name: "Great Photo of Wildlife",
+  description: "Took a photo of this bird. Great wildlife here!",
+  added_by: "Chiara Ferrari",
+  latitude: 53.381402133220114,
+  longitude: -1.8444156646728513,
+  image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1498&q=80",
+  notification_start: Time.now - (0..30).to_a.sample.days - (0..24).to_a.sample.hours,
+  location: "Woolpacks"
+)
+edale_rocks_wildlife.save
+
+edale_rocks_slope = Notification.new(
+  route_id: peak.id,
+  category: "alert",
+  name: "Very Slippery Slope",
+  description: "Be careful climbing this slope. Almost broke my hip!",
+  added_by: "Louis Leslie",
+  latitude: 53.3812997395862,
+  longitude: -1.8265414237976074,
+  image: "https://images.unsplash.com/photo-1573999057085-b85ad6fb018c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+  notification_start: Time.now - (0..30).to_a.sample.days - (0..24).to_a.sample.hours,
+  location: "Hope Valley"
+)
+edale_rocks_slope.save
+
+edale_rocks = Notification.new(
+  route_id: peak.id,
+  category: "alert",
+  name: "Lost Dog",
+  description: "Lost my dog 'Pebbles'. If found, pls contact me.",
+  added_by: "Ben West",
+  latitude: 53.375347686509485,
+  longitude: -1.81898832321167,
+  image: "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+  notification_start: Time.now - (0..30).to_a.sample.days - (0..24).to_a.sample.hours,
+  location: "Hope Valley"
+)
+edale_rocks.save
 
 puts "created notification"
