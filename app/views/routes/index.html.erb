@@ -6,21 +6,28 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1615393915491-2b7cb33b2678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1008&q=80)" alt="First slide">
+      <img class="d-block w-100"
+        src="https://images.unsplash.com/photo-1615393915491-2b7cb33b2678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1008&q=80)"
+        alt="First slide">
       <div class="carousel-caption">
-          <h3>"Hiking is not escapism; it’s realism. The people who choose to spend time outdoors are not running away from anything; we are returning to where we belong" - Jennifer Pharr Davis</h3>
+        <h3>"Hiking is not escapism; it’s realism. The people who choose to spend time outdoors are not running away
+          from anything; we are returning to where we belong" - Jennifer Pharr Davis</h3>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1609156815877-ac1c11f808ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" alt="Second slide">
-          <div class="carousel-caption">
-          <h3> "Look deep into nature and you will understand everything better." - Albert Einstein</h3>
+      <img class="d-block w-100"
+        src="https://images.unsplash.com/photo-1609156815877-ac1c11f808ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
+        alt="Second slide">
+      <div class="carousel-caption">
+        <h3> "Look deep into nature and you will understand everything better." - Albert Einstein</h3>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1615044151066-77663b5990b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Third slide">
-          <div class="carousel-caption">
-          <h3>“If you think adventure is dangerous, try routine, it’s lethal.” – Paulo Coelho</h3>
+      <img class="d-block w-100"
+        src="https://images.unsplash.com/photo-1615044151066-77663b5990b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+        alt="Third slide">
+      <div class="carousel-caption">
+        <h3>“If you think adventure is dangerous, try routine, it’s lethal.” – Paulo Coelho</h3>
       </div>
     </div>
   </div>
@@ -37,67 +44,82 @@
 
 <div class="home-container">
 
-   <div class="index-heading">
-      <h1>📍</h1>
-      <h1><strong>Plan The Perfect Route</strong></h1>
-      <p> Trek📍 contains everything you need to explore more of the great outdoors.
-      From hand-picked guides of the world’s most epic experiences</p>
-   </div>
+  <div class="index-heading">
+    <h1>📍</h1>
+    <h1><strong>Plan The Perfect Route</strong></h1>
+    <p>Trek📍 contains everything you need to explore more of the great outdoors.
+      From hand-picked guides of the world’s most epic experiences.</p>
+  </div>
 
 
-    <div data-aos="fade-right"class="search-container">
-     <div class="search-container">
-   <%= form_with url: routes_path, method: :get, id: "form", local: true do |form| %>
-     <div class="search-form-control form-group">
-       <%= form.text_field :query, class: "form-control string required coordinate" %>
-       <button name="button" type="submit" class="btn btn-flat">
-         <i class="fas fa-search"></i> Search
-       </button>
-     </div>
-   <% end %>
- </div>
+  <div data-aos="fade-right" class="search-container">
+    <div class="search-container">
+      <%= form_with url: routes_path, method: :get, id: "form", local: true do |form| %>
+      <div class="search-form-control form-group">
+        <%= form.text_field :query, class: "form-control string required coordinate" %>
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+      <% end %>
+    </div>
 
     <div data-aos="fade-left" class="map-container">
       <div class="map">
-        <div id="map"
-            style="width: 100%; height: 600px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+        <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-
-  <div data-aos="fade-left" class="home-cards">
-    <div class="cards">
-      <div data-toggle="modal" data-target="#exampleModalLong" class="card-location" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">Peak District</div>
-      <div data-toggle="modal" data-target="#exampleModalLong" class="card-location" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80)">New Forest</div>
-      <div data-toggle="modal" data-target="#exampleModalLong" class="card-location" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">Compton Downs</div>
     </div>
-  </div>
 
-  <div data-aos="fade-right" class="home-cards">
-    <div class="cards">
-      <div data-toggle="modal" data-target="#exampleModalLong" class="card-location" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1610555356070-d0efb6505f81?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80)">The Rain Vally</div>
-      <div data-toggle="modal" data-target="#exampleModalLong" class="card-location" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1471513671800-b09c87e1497c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80)">Bavarian Forest</div>
-      <div data-toggle="modal" data-target="#exampleModalLong" class="card-location" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1609674794350-c26bb1e6045d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80)">Cheddar</div>
+    <div data-aos="fade-left" class="home-cards">
+      <div class="cards">
+        <div data-toggle="modal" data-target="#exampleModalLong" class="card-location"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+          Peak District</div>
+        <div data-toggle="modal" data-target="#exampleModalLong" class="card-location"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1353&q=80)">
+          New Forest</div>
+        <div data-toggle="modal" data-target="#exampleModalLong" class="card-location"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">
+          Compton Downs</div>
+      </div>
     </div>
-  </div>
 
-  <div data-aos="fade-left" class="home-cards">
-    <div class="cards">
-      <div data-toggle="modal" data-target="#exampleModalLong" class="card-location" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1510088898151-1d75b6e925f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80)">West Lulworth</div>
-      <div data-toggle="modal" data-target="#exampleModalLong" class="card-location" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1527090296392-920158c27e56?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">Snowdonia</div>
-      <div data-toggle="modal" data-target="#exampleModalLong" class="card-location" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1510797215324-95aa89f43c33?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80)">Skye</div>
+    <div data-aos="fade-right" class="home-cards">
+      <div class="cards">
+        <div data-toggle="modal" data-target="#exampleModalLong" class="card-location"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1610555356070-d0efb6505f81?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80)">
+          The Rain Vally</div>
+        <div data-toggle="modal" data-target="#exampleModalLong" class="card-location"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1471513671800-b09c87e1497c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80)">
+          Bavarian Forest</div>
+        <div data-toggle="modal" data-target="#exampleModalLong" class="card-location"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1609674794350-c26bb1e6045d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80)">
+          Cheddar</div>
+      </div>
     </div>
-  </div>
 
-
+    <div data-aos="fade-left" class="home-cards">
+      <div class="cards">
+        <div data-toggle="modal" data-target="#exampleModalLong" class="card-location"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1510088898151-1d75b6e925f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80)">
+          West Lulworth</div>
+        <div data-toggle="modal" data-target="#exampleModalLong" class="card-location"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1527090296392-920158c27e56?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">
+          Snowdonia</div>
+        <div data-toggle="modal" data-target="#exampleModalLong" class="card-location"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1510797215324-95aa89f43c33?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80)">
+          Skye</div>
+      </div>
+    </div>
   </div>
 </div>
 
 
 <!-- Location breakdown Modal  -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -107,33 +129,40 @@
         </button>
       </div>
       <div class="modal-body">
-         	<div  class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1455218873509-8097305ee378?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)">
-                <%= link_to "Edale Rocks", route_path(@routes.first) %>
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
-								<h2>Ambleside</h2>
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
-							<h2>Bassenthwaite</h2>
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
-								<h2>Grasmere & Rydal</h2>
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1420745981456-b95fe23f5753?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
-								<h2>Hawkshead</h2>
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1422564030440-1ecae6e21f67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1401&q=80)">
-								<h2>Keswick</h2>
-							</div>
-							<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80)">
-								<h2>Ullswater</h2>
-							</div>
+        <div class="card-category"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+          <h2>Ambleside</h2>
+        </div>
+        <div class="card-category"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+          <h2>Bassenthwaite</h2>
+        </div>
+        <div class="card-category"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1455218873509-8097305ee378?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)">
+          <h2><%= link_to "Edale Rocks", route_path(@routes.first) %></h2>
+        </div>
+        <div class="card-category"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+          <h2>Grasmere & Rydal</h2>
+        </div>
+        <div class="card-category"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1420745981456-b95fe23f5753?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+          <h2>Hawkshead</h2>
+        </div>
+        <div class="card-category"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1422564030440-1ecae6e21f67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1401&q=80)">
+          <h2>Keswick</h2>
+        </div>
+        <div class="card-category"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80)">
+          <h2>Ullswater</h2>
+        </div>
 
+      </div>
     </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-flat" data-dismiss="modal">Close</button>
-      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-flat" data-dismiss="modal">Close</button>
     </div>
   </div>
+</div>
 </div>

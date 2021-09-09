@@ -51,7 +51,7 @@
 			butterfly.</p>
 	</div>
 
-  <div class="fixed-map-show-container">
+  <%# <div class="fixed-map-show-container">
 				<div data-aos="fade-right" class="show-description-card">
 					<h2>Details📍</h2>
 					<p><%= @route.description %></p>
@@ -65,16 +65,16 @@
 				  <div data-aos="fade-left" id="map3d" data-coords="<%= @coordinates %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
 
-
+  <%# </div>
 
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-12 col-md-4 ">
-        <div class="weather-card" data-longitude="<%= @route.longitude %>" data-latitude="<%= @route.latitude %>" data-key="<%= ENV['OPENWEATHER_API_KEY'] %>">>
+
           <div class="d-flex" id="weather"></div>
           <div class="d-flex">
-            <h6 class="flex-grow-1"><%= @route.name %></h6>
-            <h6 id="date"></h6>
+            <h6 class="flex-grow-1"><%= @route.name </h6>
+            <%# <h6 id="date"></h6>
           </div>
           <div class="d-flex flex-column temp mt-5 mb-3">
             <h1 class="mb-0 font-weight-bold" id="heading"></h1> <span id="description"></span>
@@ -91,26 +91,26 @@
       </div>
     </div>
   </div>
-</div>
+</div> %>
 
    <div class="fixed-map-show-container-weather">
 				<div data-aos="fade-right" class="show-description-card-weather">
-         <div class= "weather-card" id = "weather" data-longitude="<%= @route.longitude %>" data-latitude="<%= @route.latitude %>">
-					<h2>Weather📍</h2>
-					<p><%= @route.description %></p>
+        <div class="weather-card" data-longitude="<%= @route.longitude %>" data-latitude="<%= @route.latitude %>" data-key="<%= ENV['OPENWEATHER_API_KEY'] %>">
+					<h2 id="weather"><%= @route.name %>📍</h2>
+           <div><span id="icon"></span></div>
+					<h3 id="heading"></h3> <span id="description"></span>
+          <p id="date"></p>
 					<p>Where: <%= @route.location_category %></p>
           <h3 class="mb-0 font-weight-bold" id="heading"></h3> <span class="description"></span>
 
           <div class="icons">
-           <p class="my-1"> <i class="fas fa-sun"></i><span id="uv"> </span></p>
+           <p class="my-1"> <i class="fas fa-sun"></i><span id="sun"> </span></p>
            <p class="my-1"> <i class="fas fa-wind"></i> <span id="wind"> </span> </p>
            <p class="my-1"> <i class="fa fa-tint mr-2" aria-hidden="true"></i> <span id="umidity"></span></p>
-           <div><span id="icon"></span></div>
           </div>
       </div>
       </div>
       <div class="col-8">
-
         <h2 data-aos="fade-left"> Notifications 📍</h2>
           <% @notifications.each do |notification| %>
 			      <div data-aos="fade-left" class="card-product" id="notif-<%= notification.id %>">
