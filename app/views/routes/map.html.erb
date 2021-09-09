@@ -1,5 +1,9 @@
 <div class='map-page'>
-  <div class='container'>
-    <div id="map2d"></div>
+  <div id="map2d" class='container'></div>
+  <div class="container">
+    <div class="map-buttons">
+      <%= link_to "Add Notification", route_path(@route), class: "btn btn-map-show" %>
+      <%= link_to "Stop Route", route_path(@route), class: "btn btn-map-show" %>
+    </div>
   </div>
 </div>
