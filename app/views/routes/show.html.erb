@@ -6,22 +6,28 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" alt="First slide">
+      <img class="d-block w-100"
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80"
+        alt="First slide">
       <div class="carousel-caption">
-      	<h2><%= @route.name %>📍</h2>
+        <h2><%= @route.name %>📍</h2>
       </div>
 
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1565118531796-763e5082d113?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Second slide">
-          <div class="carousel-caption">
-          	<h2><%= @route.name %>📍</h2>
+      <img class="d-block w-100"
+        src="https://images.unsplash.com/photo-1565118531796-763e5082d113?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+        alt="Second slide">
+      <div class="carousel-caption">
+        <h2><%= @route.name %>📍</h2>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://images.unsplash.com/photo-1494280986787-c49b328829dd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Third slide">
-          <div class="carousel-caption">
-          <h2><%= @route.name %>📍</h2>
+      <img class="d-block w-100"
+        src="https://images.unsplash.com/photo-1494280986787-c49b328829dd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
+        alt="Third slide">
+      <div class="carousel-caption">
+        <h2><%= @route.name %>📍</h2>
       </div>
     </div>
   </div>
@@ -33,103 +39,106 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-  </div>
+</div>
 
 
 <div class="home-container">
 
-	<div data-aos="fade-left" class="main-paragraph">
+  <div data-aos="fade-left" class="main-paragraph">
     <h1>📍</h1>
-		<h2><%= @route.name %></h2>
-		<p><%= @route.description %>. Intermediate Hiking Tour. Good fitness required. Easily-accessible paths. Suitable for
-			all skill levels. The starting point of the Tour is accessible with public transport.</p>
-		<p>Standing at 852 feet (260 metres) above sea level, Coombe Hill is the highest viewpoint in the Chilterns. From
-			the summit, you experience enchanting views over the Aylesbury Vale and even as far as the Cotswolds on a clear
-			day. The chalk grassland is one of the rarest habitats owned by the National Trust and has been designated as a
-			Site of Special Scientific Interest. On the west slopes you can see the nests of the extremely rare yellow meadow
-			ant erupting from the landscape. The reserve is home to more than 30 species of wildflower and 28 species of
-			butterfly.</p>
-	</div>
+    <h2><%= @route.name %></h2>
+    <p><%= @route.description %>. Intermediate Hiking Tour. Good fitness required. Easily-accessible paths. Suitable for
+      all skill levels. The starting point of the Tour is accessible with public transport.</p>
+    <p>Standing at 852 feet (260 metres) above sea level, Coombe Hill is the highest viewpoint in the Chilterns. From
+      the summit, you experience enchanting views over the Aylesbury Vale and even as far as the Cotswolds on a clear
+      day. The chalk grassland is one of the rarest habitats owned by the National Trust and has been designated as a
+      Site of Special Scientific Interest. On the west slopes you can see the nests of the extremely rare yellow meadow
+      ant erupting from the landscape. The reserve is home to more than 30 species of wildflower and 28 species of
+      butterfly.</p>
+  </div>
 
   <div class="fixed-map-show-container">
-				<div data-aos="fade-right" class="show-description-card">
-					<h2>Details📍</h2>
-					<p><%= @route.description %></p>
-					<p>Where: <%= @route.location_category %></p>
-					<p>Difficulty: <i class="fas fa-hiking"></i> Intermediate</p>
-					<p>How long will it take me: <i class="far fa-clock"></i> <%= @route.time %></p>
-					<p>How far: <i class="fas fa-arrows-alt-h"></i> <%= @route.length %></p>
-          <%= link_to "Start Route", map_route_path(@route), class: "btn-booking-show" %>
-				  <a data-toggle="modal" data-target="#exampleModalCenter" href=""class="btn-booking-show">Add Notifications</a>
-   </div >
-				  <div data-aos="fade-left" id="map3d" data-coords="<%= @coordinates %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-        </div>
+    <div data-aos="fade-right" class="show-description-card">
+      <h2>Details📍</h2>
+      <p><%= @route.description %></p>
+      <p>Where: <%= @route.location_category %></p>
+      <p>Difficulty: <i class="fas fa-hiking"></i> Intermediate</p>
+      <p>How long will it take me: <i class="far fa-clock"></i> <%= @route.time %></p>
+      <p>How far: <i class="fas fa-arrows-alt-h"></i> <%= @route.length %></p>
+      <%= link_to "Start Route", map_route_path(@route), class: "btn-booking-show" %>
+      <a data-toggle="modal" data-target="#exampleModalCenter" href="" class="btn-booking-show">Add Notifications</a>
+    </div>
+    <div data-aos="fade-left" id="map3d" data-coords="<%= @coordinates %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 
-</div>
+<div class="fixed-map-show-container-weather">
+  <div data-aos="fade-right" class="show-description-card-weather">
+    <div class="weather-card" data-longitude="<%= @route.longitude %>" data-latitude="<%= @route.latitude %>"
+      data-key="<%= ENV['OPENWEATHER_API_KEY'] %>">
+      <h2 id="weather"><%= @route.name %>📍</h2>
+      <div><span id="icon"></span></div>
+      <h3 id="heading"></h3> <span id="description"></span>
+      <p id="date"></p>
+      <p>Where: <%= @route.location_category %></p>
+      <h3 class="mb-0 font-weight-bold" id="heading"></h3> <span class="description"></span>
 
-   <div class="fixed-map-show-container-weather">
-				<div data-aos="fade-right" class="show-description-card-weather">
-        <div class="weather-card" data-longitude="<%= @route.longitude %>" data-latitude="<%= @route.latitude %>" data-key="<%= ENV['OPENWEATHER_API_KEY'] %>">
-					<h2 id="weather"><%= @route.name %>📍</h2>
-           <div><span id="icon"></span></div>
-					<h3 id="heading"></h3> <span id="description"></span>
-          <p id="date"></p>
-					<p>Where: <%= @route.location_category %></p>
-          <h3 class="mb-0 font-weight-bold" id="heading"></h3> <span class="description"></span>
-
-          <div class="icons">
-           <p class="my-1"> <i class="fas fa-sun"></i><span id="sun"> </span></p>
-           <p class="my-1"> <i class="fas fa-wind"></i> <span id="wind"> </span> </p>
-           <p class="my-1"> <i class="fa fa-tint mr-2" aria-hidden="true"></i> <span id="umidity"></span></p>
-          </div>
-      </div>
-      </div>
-      <div class="col-8">
-        <h2 data-aos="fade-left"> Notifications 📍</h2>
-          <% @notifications.each do |notification| %>
-			      <div data-aos="fade-left" class="card-product" id="notif-<%= notification.id %>">
-              <% if notification.image.present? %>
-                <img src="<%= notification.image%>">
-              <% elsif notification.photo.attached? %>
-                <%= cl_image_tag notification.photo.key, height: 300, width: 400, crop: :fill %>
-              <% else %>
-                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" >
-              <% end %>
-                <div class="card-product-infos">
-                  <h5><%= notification.description %></h5>
-                  <p>Notification Time: <strong><%= notification.notification_start %></strong></p>
-                  <p>Location: <strong><%= notification.location %></strong></p>
-                  <p>Latitude: <strong><%= notification.latitude %></strong></p>
-                  <p>Longitude: <strong><%= notification.longitude %></strong></p>
-                </div>
-            </div>
-          <%end%>
-
-          <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add New Notification</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                      <%= simple_form_for([@route, @notification], remote: true) do |f| %>
-                        <div class="modal-body">
-                            <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
-                            <%= f.input :location, placeholder: 'Location', label: false %>
-                            <%= f.input :photo, as: :file %>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <%= f.submit class: "btn-booking-show" %>
-                        </div>
-                      <% end %>
-                </div>
-              </div>
-            </div>
+      <div class="icons">
+        <p class="my-1"> <i class="fas fa-sun"></i><span id="sun"> </span></p>
+        <p class="my-1"> <i class="fas fa-wind"></i> <span id="wind"> </span> </p>
+        <p class="my-1"> <i class="fa fa-tint mr-2" aria-hidden="true"></i> <span id="umidity"></span></p>
       </div>
     </div>
   </div>
+  <div class="col-8">
+    <h2 data-aos="fade-left"> Notifications 📍</h2>
+    <% @notifications.each do |notification| %>
+    <div data-aos="fade-left" class="card-product" id="notif-<%= notification.id %>">
+      <% if notification.image.present? %>
+      <img src="<%= notification.image%>">
+      <% elsif notification.photo.attached? %>
+      <%= cl_image_tag notification.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+      <img
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80">
+      <% end %>
+      <div class="card-product-infos">
+        <h5><%= notification.description %></h5>
+        <p>Notification Time: <strong><%= notification.notification_start %></strong></p>
+        <p>Location: <strong><%= notification.location %></strong></p>
+        <p>Latitude: <strong><%= notification.latitude %></strong></p>
+        <p>Longitude: <strong><%= notification.longitude %></strong></p>
+      </div>
+    </div>
+    <%end%>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Add New Notification</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <%= simple_form_for([@route, @notification], remote: true) do |f| %>
+          <div class="modal-body">
+            <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
+            <%= f.input :location, placeholder: 'Location', label: false %>
+            <%= f.input :photo, as: :file %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit class: "btn-booking-show" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 </div>
