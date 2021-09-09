@@ -1,9 +1,11 @@
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
  export const initShowMap = () => {
   const map = document.getElementById("map3d");
   if (map) {
     const coords3d = JSON.parse(document.getElementById("map3d").dataset.coords)
-    // console.log(coords);
-    mapboxgl.accessToken = 'pk.eyJ1IjoicGhlbmVsYWdheWxlIiwiYSI6ImNrczBnMXJkNzFqdWQydW44YjYwbG9jdGMifQ.fQ6FI93dU-T3w9JY2BjHbA';
+    mapboxgl.accessToken = map.dataset.mapboxApiKey;
     const map3d = new mapboxgl.Map({
       container: 'map3d',
       style: 'mapbox://styles/phenelagayle/ckta4p24v3kq917pcf7rgjedf',
@@ -98,4 +100,4 @@
   .addTo(map3d);
     });
    }
-  }
+}

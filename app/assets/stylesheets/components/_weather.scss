@@ -16,18 +16,16 @@
       #03e3fc);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  height: 900px;
+  height: 700px;
   width: 412px;
   margin-left: 30px;
   margin-bottom: 30px;
-  margin-top: 50px;
-
 }
 
 .show-description-card-weather h2 {
   color: #fefae0;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 10px;
   margin-bottom: 30px;
   font-size: 35px;
 }
@@ -62,4 +60,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
+}
+
+#weather{
+  margin: 0;
 }
