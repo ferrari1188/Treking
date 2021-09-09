@@ -186,6 +186,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   flex-basis: 0;
+  padding-top: 30px;
 }
 
 .fixed-profile-show-container {
@@ -216,7 +217,7 @@
   text-align: center;
   padding-top: 40px;
   margin-bottom: 30px;
-  font-size: 35px;
+  font-size: 15px;
 }
 
 .profile-description-card p {
@@ -281,7 +282,7 @@
   align-items: center;
   margin-bottom: 30px;
   border-radius: 20px;
-  width: 835px;
+  width: 100%;
 
 }
 
