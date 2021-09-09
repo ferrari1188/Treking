@@ -43,12 +43,12 @@
 
 
 <div class="home-container">
-
   <div data-aos="fade-left" class="main-paragraph">
     <h1>📍</h1>
     <h2><%= @route.name %></h2>
-    <p><%= @route.description %>. Intermediate Hiking Tour. Good fitness required. Easily-accessible paths. Suitable for
-      all skill levels. The starting point of the Tour is accessible with public transport.</p>
+    <br>
+    <p><strong><%= @route.description %>. Intermediate Hiking Tour. Good fitness required. Easily-accessible paths. Suitable for
+      all skill levels. The starting point of the Tour is accessible with public transport.</strong></p>
     <p>Standing at 852 feet (260 metres) above sea level, Coombe Hill is the highest viewpoint in the Chilterns. From
       the summit, you experience enchanting views over the Aylesbury Vale and even as far as the Cotswolds on a clear
       day. The chalk grassland is one of the rarest habitats owned by the National Trust and has been designated as a
@@ -72,6 +72,7 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 
+
 <div class="fixed-map-show-container-weather">
   <div data-aos="fade-right" class="show-description-card-weather">
     <div class="weather-card" data-longitude="<%= @route.longitude %>" data-latitude="<%= @route.latitude %>"
@@ -82,6 +83,8 @@
       <p id="date"></p>
       <p><strong>Where:</strong> <%= @route.location_category %></p>
       <h3 class="mb-0 font-weight-bold" id="heading"></h3> <span class="description"></span>
+
+ 
 
       <div class="icons">
         <p class="my-1"> <i class="fas fa-sun"></i><span id="sun"> </span></p>
@@ -95,19 +98,27 @@
     <% @notifications.each do |notification| %>
     <div data-aos="fade-left" class="card-product" id="notifications<%= notification.id %>">
       <% if notification.image.present? %>
-      <img src="<%= notification.image%>">
+        <img src="<%= notification.image%>">
       <% elsif notification.photo.attached? %>
-      <%= cl_image_tag notification.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag notification.photo.key, height: 300, width: 400, crop: :fill %>
       <% else %>
       <img
         src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80">
       <% end %>
-      <div class="card-product-infos-new">
-        <h5><%= notification.description %></h5>
-        <p>Notification Time: <strong><%= notification.notification_start %></strong></p>
+
+
+      <div class="card-product-infos">
+        <h5><%= notification.name %></h5>
+        <p>Description: <strong><%= notification.description %></strong></p>
+        <p>Added By:
+          <% if notification.added_by.present? %>
+            <strong><%= notification.added_by %></strong>
+          <% else %>
+            <strong><%= notification.route.user.first_name %> <%= notification.route.user.last_name %> </strong>
+      <% end %> </p>
+
         <p>Location: <strong><%= notification.location %></strong></p>
-        <p>Latitude: <strong><%= notification.latitude %></strong></p>
-        <p>Longitude: <strong><%= notification.longitude %></strong></p>
+        <p>Added On: <strong><%= notification.notification_start.to_formatted_s(:long) %></strong></p>
       </div>
     </div>
     <%end%>
@@ -125,13 +136,14 @@
           </div>
           <%= simple_form_for([@route, @notification], remote: true) do |f| %>
           <div class="modal-body">
+            <%= f.input :name, placeholder: 'Name', label: false %>
             <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
             <%= f.input :location, placeholder: 'Location', label: false %>
             <%= f.input :photo, as: :file %>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <%= f.submit class: "btn-booking-show" %>
+            <button type="button" class="btn-booking-show-model" data-dismiss="modal">Close</button>
+            <%= f.submit class: "btn-booking-show-model" %>
           </div>
           <% end %>
         </div>
