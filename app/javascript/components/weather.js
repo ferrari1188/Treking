@@ -1,6 +1,8 @@
 const weather = () => {
-  const data = document.querySelector(".weather-card").dataset;
-  const key = data.key;
+  const weatherCard = document.querySelector(".weather-card")
+  if (weatherCard) {
+    const data = weatherCard.dataset;
+    const key = data.key;
   console.log(key);
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${data.latitude}&lon=${data.longitude}&appid=${key}&unit=metric`;
   const coordsLocation = document.getElementById("weather");
@@ -36,8 +38,8 @@ const weather = () => {
     const millisecond = new Date(uniTimestamp);
     const sunset= millisecond.toLocaleString("en-US", {hour: "numeric", minute: "numeric"})
     sun.innerText = `${sunrise} - ${sunset}`
-
     });
+  }
 
 };
 export {weather};

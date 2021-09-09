@@ -17,7 +17,6 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 // CSS
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -29,9 +28,12 @@ import "bootstrap";
 import { initMapbox } from '../packs/init_mapbox';
 import { initShowMap } from '../components/map';
 import  { weather } from '../components/weather';
+import { initMapPage } from '../components/map_page';
 
 // Internal imports, e.g:
 // import { initWeather } from '..//init_Weather';
+
+import "controllers"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -39,6 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initShowMap();
   weather();
+  initMapPage();
 });
-
-import "controllers"
