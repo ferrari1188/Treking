@@ -29,6 +29,7 @@ class RoutesController < ApplicationController
     @name = @route.name
     @notification = Notification.new
     @notifications = @route.notifications.order(created_at: :desc)
+    @user = User.first
   end
 
   def map

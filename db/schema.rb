@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_08_091545) do
+ActiveRecord::Schema.define(version: 2021_09_09_141609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2021_09_08_091545) do
     t.datetime "notification_end"
     t.string "location"
     t.bigint "route_id"
+    t.string "name"
+    t.string "added_by"
     t.index ["route_id"], name: "index_notifications_on_route_id"
   end
 
