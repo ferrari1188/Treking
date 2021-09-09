@@ -6,7 +6,7 @@
 
 .fixed-profile-show-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-basis: auto;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -22,7 +22,7 @@
 
 .db-social .jumbotron {
   margin: 0;
-  background: url(https://bootdey.com/img/Content/flores-amarillas-wallpaper.jpeg);
+  background: url(https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -31,7 +31,6 @@
   height: 300px;
   position: relative;
   box-shadow: inset 0 0 20px rgba(0,0,0,.3);
-  padding: 0;
 }
 
 .container-fluid {
@@ -178,4 +177,135 @@
 .db-social .head-profile li .heading {
   color: #aea9c3;
   font-size: 1rem;
+}
+
+// CSS Container for both cards
+
+.fixed-profile-show-container-alex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-basis: 0;
+}
+
+.fixed-profile-show-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+// Profile CSS Green card
+
+.profile-description-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(45deg,
+      #4d544c,
+      #639438);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  height: 500px;
+  width: 412px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-description-card h2 {
+  color: #fefae0;
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: 30px;
+  font-size: 35px;
+}
+
+.profile-description-card p {
+  color: #fefae0;
+  display: flex;
+  font-size: 25px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+
+// Followers CSS Blue Card
+
+.follower-description-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(45deg,
+      #0384fc,
+      #03e3fc);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  height: 600px;
+  width: 412px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+
+}
+
+
+.follower-description-card h2 {
+  color: #fefae0;
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: 30px;
+  font-size: 35px;
+}
+
+.avater-names {
+  color: #fff;
+  text-align: center;
+  margin: 10px;
+}
+
+.avatars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+}
+
+.card-product-infos{
+  margin-bottom: 20px
+}
+
+.card-product-profile{
+  overflow: hidden;
+  height: 140px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  width: 835px;
+
+}
+
+.card-product-profile:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+}
+
+.card-product-profile img {
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+}
+
+.card-product-profile p {
+  font-size: 12px;
+  opacity: .7;
+  margin-bottom: 2px;
+  color: black;
+}
+
+.card-product-profile .card-product-infos {
+  padding: 40px;
+}
+
+.heading{
+  margin-bottom: 56px;
 }
