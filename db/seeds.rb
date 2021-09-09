@@ -10,16 +10,16 @@ Waypoint.destroy_all
 Route.destroy_all
 User.destroy_all
 
-emails = ['phenela.luengo@gmail.com', 'hester25194@gmail.com', 'chi.ferr.1188@gmail.com', 'benwest0291@outlook.com']
-emails.each do |email|
+# emails = ['phenela.luengo@gmail.com', 'hester25194@gmail.com', 'chi.ferr.1188@gmail.com', 'benwest0291@outlook.com']
+# emails.each do |email|
   user = User.new(
-    email: email,
+    email: 'hester25194@gmail.com',
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     password: "password"
   )
   user.save!
-end
+# end
 
 puts "new users created"
 
