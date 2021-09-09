@@ -36,18 +36,6 @@ peak = Route.new(
 )
 peak.save
 
-lake = Route.new(
-  user: User.all.sample,
-  description: "View to Keswick from Cat Bells Loop from Stair",
-  name: "Catbells",
-  latitude: 54.567520,
-  longitude: -3.162795,
-  time: "2 hours, 43 minutes",
-  length: "5.19 mi",
-  location_category: "Lake District"
-)
-lake.save
-
 scotland = Route.new(
   user: User.all.sample,
   description: "Ben Nevis Mountain Path Loop from Glen Nevis",
@@ -198,7 +186,6 @@ puts "Waypoints created"
   notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
   location: "Peak District"
 )
-
 edale_rocks.save
 
 edale_rocks_slope = Notification.new(
@@ -211,7 +198,6 @@ edale_rocks_slope = Notification.new(
   notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
   location: "Peak District"
 )
-
 edale_rocks_slope.save
 
 edale_rocks_wildlife = Notification.new(
@@ -224,24 +210,19 @@ edale_rocks_wildlife = Notification.new(
   notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
   location: "Peak District"
 )
-
 edale_rocks_wildlife.save
-
 
 edale_rocks_views = Notification.new(
   route_id: peak.id,
   category: "alert",
-  description: "Great spot to take some photos of amazing views",
+  description: "Amazing views",
   latitude: 53.381402133220114,
   longitude: -1.8444156646728513,
   image: "https://images.unsplash.com/photo-1493585552824-131927c85da2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80",
   notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
   location: "Peak District"
 )
-
 edale_rocks_views.save
-
-
 
 edale_rocks_team_trek = Notification.new(
   route_id: peak.id,
@@ -253,21 +234,18 @@ edale_rocks_team_trek = Notification.new(
   notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
   location: "Peak District"
 )
-
 edale_rocks_team_trek.save
-
 
 edale_rocks_picnic = Notification.new(
   route_id: peak.id,
   category: "alert",
-  description: "Great spot for a picknic",
+  description: "Great spot for a picnic",
   latitude:  53.36626440241836,
   longitude:   -1.855466365814209,
   image: "https://images.unsplash.com/photo-1590166774851-bc49b23a18fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=670&q=80",
   notification_start: Time.now.strftime("%d/%m/%Y %H:%M"),
   location: "Peak District"
 )
-
 edale_rocks_picnic.save
 
 
