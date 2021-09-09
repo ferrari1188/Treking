@@ -56,8 +56,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   width: 350px;
-  height: auto;
-  margin-bottom: 20px;
+  height: 350px;
 }
 
 .alex-card:hover {
@@ -70,9 +69,13 @@ color: #fefae0;
 }
 
 .alex-card p {
-  margin-top: 20px;
+  padding-top: 20px;
   text-align: center;
   color: #fefae0;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  font-size: 18px;
 }
 
 .btn-booking {
@@ -81,7 +84,7 @@ color: #fefae0;
   border-radius: 50px;
   padding: 10px 100px 10px 100px;
   font-weight: bold;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .alex-content{
@@ -132,7 +135,7 @@ margin-bottom: 50px;
    align-items: center;
    margin-bottom: 24px;
    border-radius: 20px;
-   width: 835px;
+   width: 100%;
  }
 
  .card-product:hover {
@@ -152,6 +155,19 @@ margin-bottom: 50px;
    color: black;
  }
 
- .card-product .card-product-infos {
-   padding: 40px;
+
+ .card-product-infos{
+   text-align: center;
+   margin-left: 50px;
+ }
+
+
+
+ .profile-card-product-infos {
+   text-align: center;
+   margin-left: 4px;
+ }
+
+ .card-location{
+   cursor: pointer;
  }
