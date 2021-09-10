@@ -84,7 +84,7 @@
       <p><strong>Where:</strong> <%= @route.location_category %></p>
       <h3 class="mb-0 font-weight-bold" id="heading"></h3> <span class="description"></span>
 
- 
+
 
       <div class="icons">
         <p class="my-1"> <i class="fas fa-sun"></i><span id="sun"> </span></p>
@@ -136,7 +136,7 @@
           </div>
           <%= simple_form_for([@route, @notification], remote: true) do |f| %>
           <div class="modal-body">
-            <%= f.input :category, placeholder: 'Name', label: false %>
+            <%= f.input :name, placeholder: 'Name', label: false %>
             <%= f.input :description, as: :text, placeholder: 'Description', label: false %>
             <%= f.input :location, placeholder: 'Location', label: false %>
             <%= f.input :photo, as: :file %>
