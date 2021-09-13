@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+This is our final project we demoed on demo day created by @benwest0291 @Alex25194 @ferrari1188 @phenelagayle. Trek is a trekking app that allows you to explore the great outdoors by choosing a route to go to and be able to add notifications along the way. This was developed during the 9-week bootcamp
